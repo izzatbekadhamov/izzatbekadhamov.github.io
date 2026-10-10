@@ -1,0 +1,103 @@
+{
+  "_izoh": "Bosh sahifa matnlari. *yulduzcha* ichidagi so‘zlar kursiv va yashil rangda chiqadi.",
+
+  "hero": {
+    "eyebrow": "Izzatbek · HRD",
+    "title": "Odamlar bilan ishlashni *biznes natijasiga* bog‘layman.",
+    "lead": "Rekruting, onboarding va xodimlarni rivojlantirish tizimlarini quraman. Bu yerda HRD sifatidagi tajribam, amaliy keyslarim va boshqaruv haqidagi fikrlarimni ulashaman.",
+    "primary": { "label": "Keyslar bilan tanishish", "href": "/keyslar/" },
+    "secondary": { "label": "Bog‘lanish", "href": "#aloqa" }
+  },
+
+  "focus": ["Rekruting", "Onboarding", "L&D", "Kompetensiyalar", "HR strategiya"],
+
+  "areas": {
+    "label": "Yo‘nalishlar",
+    "title": "Qaysi masalalar bilan ishlayman",
+    "items": [
+      {
+        "title": "Rekruting va tanlov tizimlari",
+        "text": "Vakansiya profilidan ishga qabul qilish qarorigacha bo‘lgan jarayonni aniq bosqichlar va baholash mezonlari bilan quraman."
+      },
+      {
+        "title": "Onboarding va rivojlanish",
+        "text": "Yangi xodim tezroq moslashishi va o‘z rolini tushunishi uchun birinchi kunlar va oylarni rejalashtiraman."
+      },
+      {
+        "title": "Rahbarlar kompetensiyalari",
+        "text": "Rahbardan qanday xatti-harakat kutilishini aniqlayman, uni baholash va rivojlantirish usullarini ishlab chiqaman."
+      },
+      {
+        "title": "HR va biznes natijalari",
+        "text": "HR jarayonlarini biznes ko‘rsatkichlari bilan bog‘layman: tashabbus qaysi muammoni hal qiladi va natija qanday o‘lchanadi."
+      },
+      {
+        "title": "HR jamoasi va jarayonlar",
+        "text": "HR jamoasi ishini tartibga solaman, takrorlanadigan jarayonlarni soddalashtiraman va takomillashtiraman."
+      }
+    ]
+  },
+
+  "about": {
+    "label": "Men haqimda",
+    "title": "HR qarorlarini biznes savolidan boshlayman",
+    "statement": "Yaxshi HR jarayoni alohida hujjat emas — u jamoaning har kungi ishida ko‘rinadi va biznes natijasiga ta’sir qiladi.",
+    "text": "Registon ta’lim tarmog‘ida HRD sifatida ishlayman. Tanlov, moslashuv va rivojlanishni bir-biridan uzilgan vazifalar emas, bitta tizimning qismlari deb qarayman.",
+    "link": { "label": "Batafsil men haqimda", "href": "/men-haqimda/" },
+    "pillars": [
+      {
+        "title": "Real amaliyot",
+        "text": "Fikrlarim kundalik HRD ishidan kelib chiqadi: nima ishladi, nima ishlamadi va nima uchun."
+      },
+      {
+        "title": "Biznes tahlili",
+        "text": "HR tashabbusini biznes ehtiyoji va o‘lchanadigan ko‘rsatkich orqali baholayman."
+      },
+      {
+        "title": "Boshqaruv modellari",
+        "text": "Tajribani boshqalar ham qo‘llay oladigan aniq model, bosqich va shablonlarga aylantiraman."
+      }
+    ]
+  },
+
+  "audience": {
+    "label": "Kim uchun",
+    "title": "Bu sayt kimlarga foydali",
+    "items": [
+      {
+        "title": "HR menejerlar va sohaga kirayotganlar",
+        "text": "Amaliy keyslar, jarayon tuzilmalari va ishda qo‘llash mumkin bo‘lgan materiallar."
+      },
+      {
+        "title": "O‘rta bo‘g‘in rahbarlari",
+        "text": "Jamoa bilan ishlash, yangi xodimni moslashtirish va rivojlantirish bo‘yicha fikrlar."
+      },
+      {
+        "title": "Kichik va o‘rta biznes egalari",
+        "text": "HR qarorlarini biznes nuqtai nazaridan ko‘rib chiqish uchun tahlillar."
+      },
+      {
+        "title": "Professional hamkorlikka qiziquvchilar",
+        "text": "Fikrlash uslubim va tajribam bilan tanishish hamda bog‘lanish imkoniyati."
+      }
+    ]
+  },
+
+  "cases": {
+    "label": "Keyslar",
+    "title": "Amaliy keyslar",
+    "intro": "Har bir keys bir xil tuzilmada yoziladi: vaziyat, muammo, qilingan ishlar, natija va olingan saboq."
+  },
+
+  "articles": {
+    "label": "Maqolalar",
+    "title": "Maqolalar va fikrlar",
+    "intro": "Rekruting, rahbarlik va HRning biznesdagi o‘rni haqida amaliyotdan kelib chiqqan yozuvlar."
+  },
+
+  "contact": {
+    "label": "Bog‘lanish",
+    "title": "Suhbatlashamiz",
+    "text": "HR, rahbarlik yoki professional hamkorlik haqida suhbatlashish uchun bog‘lanishingiz mumkin."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "_izoh": "Saytning umumiy sozlamalari. Bo‘sh qoldirilgan maydonlar saytda faol havola sifatida ko‘rsatilmaydi.",
+
+  "site_url": "",
+  "name": "Izzatbek",
+  "role": "HRD",
+  "workplace": "Registon ta’lim tarmog‘i",
+  "title": "Izzatbek · HRD",
+  "description": "Izzatbek — HRD. Rekruting, onboarding va xodimlarni rivojlantirish tizimlari, amaliy keyslar va boshqaruv haqidagi fikrlar.",
+  "tagline": "Real HRD amaliyoti, biznes tahlili va amaliy boshqaruv modellari.",
+
+  "portrait": "/rasmlar/portret.jpg",
+  "portrait_alt": "Izzatbek portreti",
+  "og_image": "/rasmlar/og.jpg",
+
+  "contacts": [
+    {
+      "label": "Telegram",
+      "url": "",
+      "display": "",
+      "placeholder": "https://t.me/username"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/izzatbek-adkhamov-0aa216219/",
+      "display": "Izzatbek Adkhamov",
+      "placeholder": "https://www.linkedin.com/in/username"
+    },
+    {
+      "label": "Email",
+      "url": "",
+      "display": "",
+      "placeholder": "mailto:ism@domen.uz"
+    }
+  ],
+
+  "nav": [
+    { "label": "Men haqimda", "href": "/men-haqimda/" },
+    { "label": "Keyslar", "href": "/keyslar/" },
+    { "label": "Maqolalar", "href": "/maqolalar/" },
+    { "label": "Materiallar", "href": "/materiallar/" },
+    { "label": "Bog‘lanish", "href": "/aloqa/", "cta": true }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "sayt",
+      "url": "http://localhost:4321",
+      "port": 4321
+    },
+    {
+      "name": "sayt-qoralamalar",
+      "url": "http://localhost:4322",
+      "port": 4322
+    }
+  ]
+}

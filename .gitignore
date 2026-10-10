@@ -1,0 +1,6 @@
+# Generator natijalari: python3 build.py bilan qayta yaratiladi
+dist/
+dist-drafts/
+
+.DS_Store
+__pycache__/
