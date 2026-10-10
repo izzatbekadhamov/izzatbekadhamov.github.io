@@ -13,10 +13,12 @@ import datetime
 import hashlib
 import html
 import json
+import os
 import re
 import shutil
 import sys
 from pathlib import Path
+from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent
 CONTENT = ROOT / "content"
@@ -203,7 +205,10 @@ SITE = load_json("sayt.json")
 HOME = load_json("bosh-sahifa.json")
 CATEGORIES = load_json("kategoriyalar.json")
 CATEGORY_TITLES = {c["slug"]: c["title"] for c in CATEGORIES}
-SITE_URL = SITE.get("site_url", "").rstrip("/")
+# SITE_URL muhit o‘zgaruvchisi sozlamadagi site_url ni almashtiradi (GitHub Pages yig‘ishida ishlatiladi).
+SITE_URL = (os.environ.get("SITE_URL") or SITE.get("site_url", "")).rstrip("/")
+# Sayt ichki papkada joylashsa (masalan, user.github.io/meningsaytim.uz), barcha havolalarga shu yo‘l qo‘shiladi.
+BASE_PATH = urlparse(SITE_URL).path.rstrip("/")
 YEAR = datetime.date.today().year
 
 
@@ -873,7 +878,15 @@ def build_404():
 
 # ---------------------------------------------------------------- yig‘ish
 
+def with_base_path(text):
+    if not BASE_PATH:
+        return text
+    return re.sub(r'((?:href|src)=")/(?!/)', lambda m: f"{m.group(1)}{BASE_PATH}/", text)
+
+
 def write(path, text):
+    if path.endswith(("/", ".html")):
+        text = with_base_path(text)
     target = OUT / path.lstrip("/")
     if path.endswith("/"):
         target = target / "index.html"

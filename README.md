@@ -26,6 +26,16 @@ python3 build.py --drafts
 
 `dist-drafts/` ga yoziladi va `draft: true` bo‘lgan keys, maqola va materiallarni ham ko‘rsatadi. Bu variantni internetga joylamang.
 
+## Internetga joylash (GitHub Pages)
+
+`main` branchga push qilinganda `.github/workflows/pages.yml` saytni avtomatik yig‘adi va GitHub Pages’ga joylaydi. Natijani repo’ning **Actions** bo‘limida kuzatish mumkin.
+
+Sayt manzili: https://izzatbekadhamov1-hash.github.io/meningsaytim.uz/
+
+Yig‘ish paytida sayt manzili `SITE_URL` muhit o‘zgaruvchisi orqali beriladi, shuning uchun ichki papkadagi manzil (`/meningsaytim.uz/`) havolalarga avtomatik qo‘shiladi. Lokal `python3 build.py` esa avvalgidek domen ildizi uchun yig‘adi.
+
+Keyinchalik shaxsiy domen ulansa: repo **Settings → Pages → Custom domain** bo‘limida domenni kiriting — havolalar avtomatik moslashadi.
+
 ## Kontentni yangilash
 
 | Nima | Qayerda |
