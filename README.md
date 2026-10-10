@@ -30,9 +30,9 @@ python3 build.py --drafts
 
 `main` branchga push qilinganda `.github/workflows/pages.yml` saytni avtomatik yig‘adi va GitHub Pages’ga joylaydi. Natijani repo’ning **Actions** bo‘limida kuzatish mumkin.
 
-Sayt manzili: https://izzatbekadhamov1-hash.github.io/meningsaytim.uz/
+Sayt manzili: https://izzatbekadhamov.github.io/
 
-Yig‘ish paytida sayt manzili `SITE_URL` muhit o‘zgaruvchisi orqali beriladi, shuning uchun ichki papkadagi manzil (`/meningsaytim.uz/`) havolalarga avtomatik qo‘shiladi. Lokal `python3 build.py` esa avvalgidek domen ildizi uchun yig‘adi.
+Yig‘ish paytida sayt manzili `SITE_URL` muhit o‘zgaruvchisi orqali beriladi: canonical havola, ulashish rasmi va `sitemap.xml` shu manzil bilan yaratiladi. Agar sayt ichki papkada joylashsa (masalan, `user.github.io/repo/`), papka nomi havolalarga avtomatik qo‘shiladi. Lokal `python3 build.py` domen ildizi uchun yig‘adi.
 
 Keyinchalik shaxsiy domen ulansa: repo **Settings → Pages → Custom domain** bo‘limida domenni kiriting — havolalar avtomatik moslashadi.
 

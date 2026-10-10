@@ -10,8 +10,8 @@ Sayt ishlaydi, lekin quyidagi shaxsiy ma’lumotlar hali berilmagan. Ular to‘l
   - Email: `"url": "mailto:...@..."`
   - Ixtiyoriy: `"display"` — saytda ko‘rinadigan qisqa matn (masalan, `@username`).
   - Bo‘sh qolgan manzil faol havola bo‘lmaydi, “Manzil keyinroq qo‘shiladi” deb chiqadi.
-- [ ] **Sayt domeni** — `content/sayt.json` → `site_url` (masalan, `https://meningsaytim.uz`).
-  To‘ldirilgach canonical havola, `og:url` va `sitemap.xml` avtomatik qo‘shiladi.
+- [x] **Sayt manzili** — https://izzatbekadhamov.github.io/ (GitHub Pages yig‘ishda avtomatik beriladi).
+  Shaxsiy domen (masalan, `meningsaytim.uz`) ulash ixtiyoriy: repo **Settings → Pages → Custom domain**.
 - [ ] **“Men haqimda” matnini tekshirish** — `content/men-haqimda.md` va `content/bosh-sahifa.json` → `about`.
   Matn briefdagi ma’lumotlar asosida yozildi; yondashuv va savollar sizning so‘zlaringizga mos kelishini tasdiqlang yoki tahrirlang.
 
