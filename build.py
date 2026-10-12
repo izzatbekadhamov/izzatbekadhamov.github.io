@@ -123,8 +123,36 @@ def inline(text):
     return re.sub(r"\x00(\d+)\x00", lambda m: codes[int(m.group(1))], text)
 
 
+def table(rows):
+    """`| a | b |` ko‘rinishidagi jadval. Ikkinchi qator `---` / `---:` bo‘lsa, birinchisi sarlavha."""
+    def cells(row):
+        return [c.strip() for c in row.strip().strip("|").split("|")]
+
+    head, align = None, None
+    body_rows = [cells(r) for r in rows]
+    if len(body_rows) > 1 and all(re.match(r"^:?-{3,}:?$", c) for c in body_rows[1]):
+        head = body_rows[0]
+        align = ["num" if c.endswith(":") and not c.startswith(":") else "" for c in body_rows[1]]
+        body_rows = body_rows[2:]
+    align = align or [""] * len(body_rows[0])
+
+    def cell(tag, text, n):
+        cls = f' class="{align[n]}"' if n < len(align) and align[n] else ""
+        scope = ' scope="col"' if tag == "th" else ""
+        return f"<{tag}{cls}{scope}>{inline(text)}</{tag}>"
+
+    html_rows = []
+    if head:
+        html_rows.append("<thead><tr>" + "".join(cell("th", c, n) for n, c in enumerate(head)) + "</tr></thead>")
+    html_rows.append("<tbody>" + "".join(
+        "<tr>" + "".join(cell("td", c, n) for n, c in enumerate(r)) + "</tr>" for r in body_rows
+    ) + "</tbody>")
+    return ('<div class="table-wrap" role="region" aria-label="Jadval" tabindex="0">'
+            f'<table>{"".join(html_rows)}</table></div>')
+
+
 def markdown(src):
-    """Kichik Markdown: sarlavhalar, paragraflar, ro‘yxatlar, iqtibos, chiziq."""
+    """Kichik Markdown: sarlavhalar, paragraflar, ro‘yxatlar, jadvallar, iqtibos, chiziq."""
     lines = src.split("\n")
     out, para, headings, used_ids = [], [], [], set()
     i = 0
@@ -174,6 +202,15 @@ def markdown(src):
                 "<p>" + inline(" ".join(p.split())) + "</p>" for p in paras if p.strip()
             )
             out.append("<blockquote>" + inner + "</blockquote>")
+            continue
+
+        if s.startswith("|"):
+            flush()
+            rows = []
+            while i < len(lines) and lines[i].strip().startswith("|"):
+                rows.append(lines[i].strip())
+                i += 1
+            out.append(table(rows))
             continue
 
         ordered = bool(re.match(r"^\d+[.)]\s+", s))
@@ -243,22 +280,25 @@ def load_articles():
             warnings.append(f"Maqola '{doc['slug']}': sana YYYY-MM-DD ko‘rinishida yozilmagan.")
         doc["reading"] = reading_time(doc["body"])
         articles.append(doc)
-    articles.sort(key=lambda a: a["date_obj"] or datetime.date.min, reverse=True)
+    # Yangi sana avval; bir kunda chiqqanlar `order` bo‘yicha.
+    articles.sort(key=lambda a: (-(a["date_obj"] or datetime.date.min).toordinal(),
+                                 int(a.get("order") or 999)))
     return visible(articles)
 
 
 def load_materials():
     materials = []
-    for item in load_json("materiallar.json"):
-        item = dict(item)
-        item["draft"] = bool(item.get("draft"))
-        file_name = (item.get("file") or "").strip()
+    for path in sorted((CONTENT / "materiallar").glob("*.md")):
+        doc = parse_doc(path)
+        check_public(doc, "Material")
+        file_name = (doc.get("file") or "").strip()
         file_path = CONTENT / "fayllar" / file_name if file_name else None
         if file_name and not file_path.is_file():
-            warnings.append(f"Material '{item['title']}': fayl topilmadi ({file_name}).")
+            warnings.append(f"Material '{doc['slug']}': fayl topilmadi ({file_name}).")
             file_path = None
-        item["file_path"] = file_path
-        materials.append(item)
+        doc["file_path"] = file_path
+        materials.append(doc)
+    materials.sort(key=lambda m: (int(m.get("order") or 999), m["title"]))
     return visible(materials)
 
 
@@ -275,7 +315,12 @@ def absolute(path):
 
 
 def layout(*, title, description, path, body, og_type="website", is_draft=False):
-    full_title = SITE["title"] if path == "/" else f"{title} — {SITE['title']}"
+    page_meta = SITE.get("meta", {}).get(path)
+    if page_meta:
+        full_title = page_meta["title"]
+        description = page_meta.get("description") or description
+    else:
+        full_title = SITE["title"] if path == "/" else f"{title} — {SITE['name']}"
     canonical = absolute(path)
     meta = [
         f'<meta name="description" content="{esc(description)}">',
@@ -391,27 +436,26 @@ def footer(path="/"):
 
 
 def contact_list(compact=False):
+    """Faqat manzili berilgan aloqalarni ko‘rsatadi; bo‘shlari yashiriladi."""
     rows = []
     for c in SITE["contacts"]:
         url = (c.get("url") or "").strip()
+        if not url:
+            continue
         label = esc(c["label"])
-        if url:
-            shown = esc(c.get("display") or re.sub(r"^(mailto:|https?://(www\.)?)", "", url))
-            external = url.startswith("http")
-            attrs = ' target="_blank" rel="noopener"' if external else ""
-            note = '<span class="visually-hidden"> (yangi oynada ochiladi)</span>' if external else ""
-            rows.append(
-                f'<li><a class="contact-row" href="{esc(url)}"{attrs}>'
-                f'<span class="contact-label">{label}</span>'
-                f'<span class="contact-value">{shown}{note}</span>'
-                f'<span class="contact-arrow" aria-hidden="true">↗</span></a></li>'
-            )
-        elif not compact:
-            rows.append(
-                f'<li><div class="contact-row is-pending">'
-                f'<span class="contact-label">{label}</span>'
-                f'<span class="contact-value">Manzil keyinroq qo‘shiladi</span></div></li>'
-            )
+        shown = esc(c.get("display") or re.sub(r"^(mailto:|https?://(www\.)?)", "", url))
+        external = url.startswith("http")
+        attrs = ' target="_blank" rel="noopener"' if external else ""
+        new_tab = '<span class="visually-hidden"> (yangi oynada ochiladi)</span>' if external else ""
+        note = ""
+        if c.get("note") and not compact:
+            note = f'<span class="contact-note">{esc(c["note"])}</span>'
+        rows.append(
+            f'<li><a class="contact-row" href="{esc(url)}"{attrs}>'
+            f'<span class="contact-label">{label}{note}</span>'
+            f'<span class="contact-value">{shown}{new_tab}</span>'
+            f'<span class="contact-arrow" aria-hidden="true">↗</span></a></li>'
+        )
     if not rows:
         return ""
     cls = "contact-list contact-list--compact" if compact else "contact-list"
@@ -558,6 +602,10 @@ def build_home(cases, articles):
         for n, a in enumerate(HOME["areas"]["items"])
     )
     ab = HOME["about"]
+    about_paragraphs = "".join(
+        f'<p class="{"about-lead" if n == 0 else "body-text"}">{esc(p)}</p>'
+        for n, p in enumerate(ab["paragraphs"])
+    )
     formula_parts = []
     for n, p in enumerate(ab["pillars"]):
         if n:
@@ -624,8 +672,7 @@ def build_home(cases, articles):
       <div class="wrap">
         {section_head("02", ab['label'], ab['title'], hid="men-haqimda")}
         <div class="split-main about-intro rv">
-          <p class="statement">{esc(ab['statement'])}</p>
-          <p class="body-text">{esc(ab['text'])}</p>
+          {about_paragraphs}
         </div>
         <ul class="formula" role="list">{''.join(formula_parts)}</ul>
         <div class="split-main">
@@ -676,7 +723,17 @@ def build_home(cases, articles):
 def build_about():
     doc = parse_doc(CONTENT / "men-haqimda.md")
     content, _ = markdown(doc["body"])
-    areas = "".join(f"<li>{esc(a['title'])}</li>" for a in HOME["areas"]["items"])
+    focus = [x.strip() for x in doc.get("focus", "").split("·") if x.strip()]
+    focus = focus or [a["title"] for a in HOME["areas"]["items"]]
+    areas = "".join(f"<li>{esc(x)}</li>" for x in focus)
+    if doc.get("button_url"):
+        external = doc["button_url"].startswith("http")
+        attrs = ' target="_blank" rel="noopener"' if external else ""
+        new_tab = '<span class="visually-hidden"> (yangi oynada ochiladi)</span>' if external else ""
+        button = (f'<a class="btn btn-primary btn-block" href="{esc(doc["button_url"])}"{attrs}>'
+                  f'{esc(doc.get("button_label", "Bog‘lanish"))}{new_tab} <span class="arrow" aria-hidden="true">↗</span></a>')
+    else:
+        button = '<a class="btn btn-secondary btn-block" href="/aloqa/">Bog‘lanish</a>'
     body = f"""
     {page_head(esc(SITE['name'] + ' · ' + SITE['role']), doc['title'], doc['lead'])}
     <div class="wrap about-layout">
@@ -687,7 +744,7 @@ def build_about():
           <p class="aside-title">Ish yo‘nalishlari</p>
           <ul class="aside-list">{areas}</ul>
         </div>
-        <a class="btn btn-secondary btn-block" href="/aloqa/">Bog‘lanish</a>
+        {button}
       </aside>
     </div>
 """
@@ -698,7 +755,7 @@ def build_about():
 def build_cases_index(cases):
     content = case_cards(cases, heading="h2") if cases else cases_empty(heading="h2")
     body = f"""
-    {page_head("Keyslar", "Amaliy keyslar", "Har bir keys real vaziyatdan boshlanadi va bir xil tuzilmada yoziladi: vaziyat, muammo, qilingan ishlar, natija va olingan saboq.")}
+    {page_head("Keyslar", "Amaliy keyslar", HOME["cases"]["intro"])}
     <div class="wrap page-body">{content}</div>
 """
     return layout(title="Amaliy keyslar",
@@ -751,7 +808,7 @@ def build_articles_index(articles):
     else:
         content = articles_empty(heading="h2")
     body = f"""
-    {page_head("Maqolalar", "Maqolalar va fikrlar", "Rekruting, onboarding, rahbarlik va HRning biznesdagi o‘rni haqida amaliyotdan kelib chiqqan yozuvlar.")}
+    {page_head("Maqolalar", "Maqolalar va fikrlar", HOME["articles"]["intro"])}
     <div class="wrap page-body">{content}</div>
 """
     return layout(title="Maqolalar va fikrlar",
@@ -766,6 +823,11 @@ def build_article(article, articles):
     draft_note = ""
     if article["draft"]:
         draft_note = '<p class="draft-note">Bu maqola qoralama. U ommaviy saytda ko‘rinmaydi.</p>'
+    article_cta = ""
+    if article.get("cta_url"):
+        article_cta = (f'<p class="article-cta"><a class="btn btn-primary" href="{esc(article["cta_url"])}" target="_blank" rel="noopener">'
+                       f'{esc(article.get("cta_label", "Batafsil"))}<span class="visually-hidden"> (yangi oynada ochiladi)</span> '
+                       '<span class="arrow" aria-hidden="true">↗</span></a></p>')
     others = [a for a in articles if a["slug"] != article["slug"]]
     related = [a for a in others if a.get("category") == cat][:2] or others[:2]
     related_html = ""
@@ -789,6 +851,7 @@ def build_article(article, articles):
       </header>
       <div class="wrap-narrow">
         <div class="prose">{draft_note}{content}</div>
+        {article_cta}
         <div class="article-end">
           <p>Fikr yoki savolingiz bo‘lsa, <a href="/aloqa/">bog‘laning</a>.</p>
         </div>
@@ -801,25 +864,35 @@ def build_article(article, articles):
                   is_draft=article["draft"])
 
 
+def material_download(m):
+    if not m["file_path"]:
+        return ""
+    size_kb = max(1, round(m["file_path"].stat().st_size / 1024))
+    ext = m["file_path"].suffix.lstrip(".").upper()
+    return (f'<a class="btn btn-secondary" href="/fayllar/{esc(m["file_path"].name)}" download>'
+            f'Yuklab olish <span class="btn-note">{ext}, {size_kb} KB</span></a>')
+
+
+def material_meta(m):
+    return f"""<dl class="material-meta">
+            <div><dt>Kim uchun</dt><dd>{esc(m.get('audience', ''))}</dd></div>
+            <div><dt>Qaysi vazifani hal qiladi</dt><dd>{esc(m.get('task', ''))}</dd></div>
+          </dl>"""
+
+
 def build_materials(materials):
     if materials:
         rows = []
-        for m in materials:
-            if m["file_path"]:
-                size_kb = max(1, round(m["file_path"].stat().st_size / 1024))
-                ext = m["file_path"].suffix.lstrip(".").upper()
-                action = (f'<a class="btn btn-secondary" href="/fayllar/{esc(m["file_path"].name)}" download>'
-                          f'Yuklab olish <span class="btn-note">{ext}, {size_kb} KB</span></a>')
-            else:
-                action = '<span class="status">Fayl tayyorlanmoqda</span>'
-            rows.append(f"""<li class="material">
+        for n, m in enumerate(materials):
+            rows.append(f"""<li class="material rv" style="--d:{n}">
           <p class="card-topic">{esc(m.get('type', 'Material'))}{draft_badge(m)}</p>
           <h2 class="material-title">{esc(m['title'])}</h2>
-          <dl class="material-meta">
-            <div><dt>Kim uchun</dt><dd>{esc(m.get('audience', ''))}</dd></div>
-            <div><dt>Qaysi vazifani hal qiladi</dt><dd>{esc(m.get('task', ''))}</dd></div>
-          </dl>
-          <div class="material-action">{action}</div>
+          <p class="card-text">{esc(m.get('summary', ''))}</p>
+          {material_meta(m)}
+          <div class="material-action">
+            <a class="btn btn-primary" href="/materiallar/{m['slug']}/">Materialni o‘qish<span class="visually-hidden">: {esc(m['title'])}</span> <span class="arrow" aria-hidden="true">→</span></a>
+            {material_download(m)}
+          </div>
         </li>""")
         content = f'<ul class="material-list" role="list">{"".join(rows)}</ul>'
     else:
@@ -829,33 +902,66 @@ def build_materials(materials):
         <ul class="topic-list"><li>Chek-listlar</li><li>Intervyu savollari</li><li>HR shablonlari</li></ul>
       </div>"""
     body = f"""
-    {page_head("Materiallar", "Foydali materiallar", "Chek-listlar, intervyu savollari va HR shablonlari — ishda qo‘llash uchun.")}
+    {page_head("Materiallar", "Foydali materiallar", "Suhbat, onboarding va delegatsiya uchun ishda qo‘llash mumkin bo‘lgan qisqa qo‘llanmalar. Har bir material vazifani aniqroq tashkil qilishga yordam beradi.")}
     <div class="wrap page-body">{content}</div>
 """
     return layout(title="Foydali materiallar",
-                  description="HR mutaxassislar va rahbarlar uchun chek-listlar, intervyu savollari va shablonlar.",
+                  description="HR mutaxassislar va rahbarlar uchun amaliy qo‘llanmalar.",
                   path="/materiallar/", body=body)
+
+
+def build_material(m, materials):
+    content, _ = markdown(m["body"])
+    draft_note = ""
+    if m["draft"]:
+        draft_note = '<p class="draft-note">Bu material qoralama. U ommaviy saytda ko‘rinmaydi.</p>'
+    back = '<a class="back-link" href="/materiallar/"><span aria-hidden="true">←</span> Barcha materiallar</a>'
+    download = material_download(m)
+    others = [x for x in materials if x["slug"] != m["slug"]]
+    other_links = "".join(
+        f'<li><a href="/materiallar/{x["slug"]}/">{esc(x["title"])}</a></li>' for x in others
+    )
+    other_html = ""
+    if other_links:
+        other_html = f"""<div class="aside-block">
+          <p class="aside-title">Boshqa materiallar</p>
+          <ul class="aside-list aside-links">{other_links}</ul>
+        </div>"""
+    body = f"""
+    <article>
+    {page_head("Material · " + esc(m.get('type', '')), m['title'], m.get('summary', ''), back)}
+    <div class="wrap about-layout material-layout">
+      <div class="prose">{draft_note}{content}</div>
+      <aside class="about-aside" aria-label="Material haqida">
+        <div class="material-card">
+          {material_meta(m)}
+          {download}
+        </div>
+        {other_html}
+      </aside>
+    </div>
+    </article>
+"""
+    return layout(title=m["title"], description=m.get("summary", SITE["description"]),
+                  path=f"/materiallar/{m['slug']}/", body=body, og_type="article",
+                  is_draft=m["draft"])
 
 
 def build_contact():
     ct = HOME["contact"]
+    topics = "".join(f"<li>{esc(t)}</li>" for t in ct.get("topics", []))
     body = f"""
-    {page_head("Bog‘lanish", "Bog‘lanish", ct['text'])}
+    {page_head("Bog‘lanish", ct['title'], ct['text'])}
     <div class="wrap page-body contact-page">
       <div class="contact-panel">
         <div class="contact-panel-head">
           <p class="section-label">Aloqa manzillari</p>
-          <h2 class="contact-panel-title">{esc(HOME['contact']['title'])}<span class="accent-dot">.</span></h2>
         </div>
         {contact_list()}
       </div>
       <div class="contact-topics">
-        <p class="aside-title">Qaysi mavzularda yozish mumkin</p>
-        <ul class="aside-list">
-          <li>HR jarayonlari: rekruting, onboarding, rivojlanish</li>
-          <li>Rahbarlik va jamoa bilan ishlash</li>
-          <li>Professional hamkorlik</li>
-        </ul>
+        <p class="aside-title">Qaysi mavzularda yozish mumkin?</p>
+        <ul class="aside-list">{topics}</ul>
       </div>
     </div>
 """
@@ -914,6 +1020,8 @@ def main():
     for a in articles:
         write(f"/maqolalar/{a['slug']}/", build_article(a, articles))
     write("/materiallar/", build_materials(materials))
+    for m in materials:
+        write(f"/materiallar/{m['slug']}/", build_material(m, materials))
     write("/aloqa/", build_contact())
     write("/404.html", build_404())
 
@@ -923,6 +1031,7 @@ def main():
         paths = ["/", "/men-haqimda/", "/keyslar/", "/maqolalar/", "/materiallar/", "/aloqa/"]
         paths += [f"/keyslar/{c['slug']}/" for c in cases]
         paths += [f"/maqolalar/{a['slug']}/" for a in articles]
+        paths += [f"/materiallar/{m['slug']}/" for m in materials]
         urls = "".join(f"<url><loc>{esc(SITE_URL + p)}</loc></url>" for p in paths)
         write("/sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n'
               f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n')

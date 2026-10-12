@@ -2,7 +2,7 @@
 title: Onboarding jarayonini shakllantirish
 topic: Onboarding va rivojlanish
 summary: Yangi xodimning birinchi kunlari va oylarini tasodifga emas, aniq rejaga tayanadigan jarayonga aylantirish.
-order: 2
+order: 3
 draft: true
 ---
 

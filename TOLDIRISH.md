@@ -1,38 +1,32 @@
 # To‘ldirish ro‘yxati
 
-Sayt ishlaydi, lekin quyidagi shaxsiy ma’lumotlar hali berilmagan. Ular to‘ldirilmaguncha saytda bo‘sh holat yoki vaqtinchalik element ko‘rinadi — hech narsa o‘ylab topilmagan.
+Sayt kontenti 2026-yil 12-oktabrda `Izzatbek-Adhamov-sayt-kontenti.md` hujjati asosida to‘ldirildi. Quyidagilar hali berilmagan — ular kelmaguncha saytda o‘ylab topilgan ma’lumot ko‘rsatilmaydi.
 
-## 1. Majburiy (e’lon qilishdan oldin)
+## Bajarilgan
 
-- [ ] **Aloqa manzillari** — `content/sayt.json` → `contacts`
-  - Telegram: `"url": "https://t.me/..."`
-  - [x] LinkedIn — qo‘shildi
-  - Email: `"url": "mailto:...@..."`
-  - Ixtiyoriy: `"display"` — saytda ko‘rinadigan qisqa matn (masalan, `@username`).
-  - Bo‘sh qolgan manzil faol havola bo‘lmaydi, “Manzil keyinroq qo‘shiladi” deb chiqadi.
-- [x] **Sayt manzili** — https://izzatbekadhamov.github.io/ (GitHub Pages yig‘ishda avtomatik beriladi).
-  Shaxsiy domen (masalan, `meningsaytim.uz`) ulash ixtiyoriy: repo **Settings → Pages → Custom domain**.
-- [ ] **“Men haqimda” matnini tekshirish** — `content/men-haqimda.md` va `content/bosh-sahifa.json` → `about`.
-  Matn briefdagi ma’lumotlar asosida yozildi; yondashuv va savollar sizning so‘zlaringizga mos kelishini tasdiqlang yoki tahrirlang.
+- [x] Bosh sahifa, “Men haqimda”, aloqa sahifasi matnlari va har sahifaning sarlavha/tavsifi
+- [x] 2 ta keys: rekrutingni tizimlashtirish (ATS), HR amaliyoti
+- [x] 5 ta maqola (tanlangan yozuvlar)
+- [x] 3 ta material: STAR savollari, D7–D30–D60 tekshiruvi, delegatsiya savollari
+- [x] LinkedIn va Telegram kanali havolalari
+- [x] Portret va ulashish rasmi
+- [x] Sayt manzili: https://izzatbekadhamov.github.io/
 
-## 2. Tavsiya etiladi
+## Hali berilmagan
 
-- [x] **Portret surati** — `content/rasmlar/portret.jpg` (800×1000). Almashtirish uchun shu faylni yangisi bilan almashtiring.
-- [x] **Ulashish rasmi (Open Graph)** — `content/rasmlar/og.jpg` (1200×630).
-  Eslatma: Telegram/LinkedIn rasmni ko‘rsatishi uchun `site_url` ham to‘ldirilgan bo‘lishi kerak (rasm manzili to‘liq URL bo‘lishi shart).
+- [ ] **Email yoki shaxsiy Telegram manzili** — `content/sayt.json` → `contacts`. Manzil bo‘sh turgan aloqa saytda ko‘rsatilmaydi.
+- [ ] **Avvalgi ish joylari** — kompaniya nomi, lavozim va aniq davrlar (“Men haqimda” uchun).
+- [ ] **Maqolalarning asl postlari** — aniq sanasi va bevosita havolalari.
+- [ ] **Rekruting keysi metodologiyasi** — “oldin/keyin” davrlarining sanalari va 17 kunni hisoblash qoidasi.
+- [ ] **Material fayllari** — yuklab olinadigan versiya (PDF va h.k.) tayyor bo‘lsa, `content/fayllar/` ga qo‘yib, material faylidagi `file:` ga nomini yozing.
 
-## 3. Kontent (tayyor bo‘lishi bilan)
+## Qoralama sifatida qolganlar
 
-- [ ] **Keyslar** — `content/keyslar/` dagi 3 ta qoralama:
-  - Rekruting jarayonini tizimlashtirish
-  - Onboarding jarayonini shakllantirish
-  - Filial rahbarlari kompetensiya modelini ishlab chiqish
+`content/keyslar/` dagi quyidagi keyslar ommaviy saytda ko‘rinmaydi (`draft: true`). Ma’lumot tayyor bo‘lganda `[[...]]` joylarini to‘ldirib, `draft: false` qiling:
 
-  `[[...]]` joylarini haqiqiy ma’lumot bilan almashtiring, faqat tasdiqlangan natijalarni yozing, so‘ng `draft: false` qiling.
-- [ ] **Maqolalar** — `content/maqolalar/maqola-namunasi.md` ni nusxalab, birinchi maqolani yozing.
-- [ ] **Materiallar** — faylni `content/fayllar/` ga qo‘ying, `content/materiallar.json` da `"file"` ga nomini yozing va `"draft": false` qiling.
+- Onboarding jarayonini shakllantirish
+- Filial rahbarlari kompetensiya modelini ishlab chiqish
 
-## 4. Joylashtirish
+## Ixtiyoriy
 
-- [ ] Hosting tanlash (masalan, Netlify, Cloudflare Pages, GitHub Pages yoki o‘z serveringiz) — `dist/` papkasini yuklash kifoya.
-- [ ] Domenni hostingga ulash.
+- [ ] Shaxsiy domen (masalan, `meningsaytim.uz`): repo **Settings → Pages → Custom domain**.

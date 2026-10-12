@@ -1,29 +1,45 @@
 ---
 title: Men haqimda
-lead: Men Izzatbek, Registon ta’lim tarmog‘ida HRD sifatida ishlayman. Asosiy ishim — odamlar bilan bog‘liq jarayonlarni biznes natijasiga xizmat qiladigan tizimga aylantirish.
-description: Izzatbek — HRD. Rekruting, onboarding, xodimlarni rivojlantirish va rahbarlar kompetensiyalari bilan ishlash yondashuvi.
+lead: Men Izzatbek Adhamov. Registon ta’lim tarmog‘ida HRD sifatida ishlayman. Asosiy vazifam — xodimlar bilan bog‘liq jarayonlarni tashkilotning ehtiyojlari va natijalari bilan bog‘lash.
+focus: Rekruting · Onboarding · L&D · Kompetensiyalar · HR jamoasi
+button_label: LinkedIn profilim
+button_url: https://www.linkedin.com/in/izzatbek-adkhamov-0aa216219/
 ---
 
-## Qanday masalalar bilan ishlayman
+## Qaysi masalalar bilan ishlayman?
 
-Ko‘p tashkilotlarda HR jarayonlari bir-biridan uzilgan holda ishlaydi. Xodim tanlanadi, lekin u qanday moslashishi aniq emas. Rahbar tayinlanadi, lekin undan nima kutilayotgani yozilmagan. Trening o‘tkaziladi, lekin uning natijasi o‘lchanmaydi.
+HRdagi ishlarim rekruting bilan cheklanmaydi. Yangi xodim qanday moslashadi, rahbardan nimalar kutiladi, rivojlanish dasturi qaysi muammoni hal qiladi va HR jamoasi qanday ishlaydi — shu savollar ustida ishlayman.
 
-Men rekruting, onboarding, xodimlarni rivojlantirish va rahbarlar kompetensiyalari ustida ishlayman. Maqsadim — shu bo‘g‘inlarni bitta mantiqiy tizimga yig‘ish. HR jamoasini boshqarish va jarayonlarni takomillashtirish ham ishimning bir qismi.
+Rekrutingda mening e’tiborim jarayon va ko‘rsatkichlarga qaratilgan. Kundalik nomzod izlash va suhbatlarni jamoamiz tashkil qiladi. Men ustuvorliklar, resurslar, rahbarlar bilan hamkorlik va natijalarni tahlil qilish bilan shug‘ullanaman.
 
-## HR qarorlariga yondashuvim
+Onboarding va rivojlanishda yangi xodimning dastlabki kunlari, rahbar va mentorning vazifalari, qayta aloqa hamda natijani baholashga e’tibor beraman.
 
-Qaror qabul qilishdan oldin o‘zimga bir nechta savol beraman:
+## Qarorlarga yondashuvim
 
-- Bu qaysi biznes muammosini hal qiladi?
-- Natijani qanday ko‘rsatkich bilan tekshiramiz?
-- Jarayonni kim davom ettiradi va u bitta odamga bog‘liq bo‘lib qolmaydimi?
+HR tashabbusini boshlashdan oldin uchta savolga javob izlayman:
 
-Bu savollarga aniq javob bo‘lmasa, yechim izlashdan oldin muammoni yaxshiroq tushunishga vaqt ajrataman.
+1. Qaysi muammoni hal qilmoqchimiz?
+2. Nima o‘zgarsa, ishimiz foyda berganini bilamiz?
+3. Jarayonni kim olib boradi va unga qanday yordam kerak?
 
-## Tajriba, ma’lumot va modellar
+Tizimni joriy etishda odamlarning uni tushunishi ham muhim. Yangi vosita yoki talabni tanishtirishning o‘zi yetmaydi. Tushuntirish, o‘rgatish va ish davomida yordam berish kerak.
 
-Yondashuvim uch narsaga tayanadi: real HRD amaliyoti, biznes tahlili va amaliy boshqaruv modellari.
+## Hozir ishlayotgan yo‘nalishlarim
 
-Tajriba nima bo‘layotganini ko‘rsatadi. Ma’lumot buni tekshirishga yordam beradi. Model esa natijani takrorlanadigan qiladi — jarayon boshqa jamoada yoki boshqa odam qo‘lida ham ishlay oladi.
+**Onboarding va sinov davri.** Yangi xodimning moslashuv bosqichlari, rahbar va mentorning mas’uliyati hamda qayta aloqa jarayonlarini shakllantirish ustida ishlayapman.
 
-Bu saytda shu yondashuv asosida keyslar, maqolalar va materiallarni ulashaman.
+**Rahbarlar kompetensiyalari.** Filial rahbaridan kutiladigan xatti-harakatlarni aniqlash, kompetensiya darajalari va baholash usullarini ishlab chiqish ustida ishlayapman.
+
+**Xodimlarni rivojlantirish.** O‘quv ehtiyojlarini aniqlash va o‘rganilgan bilimni ishdagi amaliyot bilan bog‘lashga e’tibor beraman.
+
+## Nega yozaman?
+
+HR sohasiga kirayotgan mutaxassislar, rahbarlar va biznes egalari bilan tajriba almashishni xohlayman. Men uchun foydali kontent — o‘quvchi o‘z ishida tanib oladigan vaziyat va undan chiqaradigan amaliy xulosa.
+
+Shuning uchun bu yerda nazariy modellar bilan birga real qarorlar, qarshiliklar, xatolar va saboqlar haqida ham yozaman.
+
+## Ta’lim va kasbiy rivojlanish
+
+- **Muhammad al-Xorazmiy nomidagi Toshkent axborot texnologiyalari universiteti** — 2017–2021.
+- **Senior HR** — University of Digital Economics and Agrotechnologies, 2024.
+- **Employee onboarding** — Mike Pritula Academy, 2025.
