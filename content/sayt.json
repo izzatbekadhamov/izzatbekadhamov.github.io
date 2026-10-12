@@ -1,38 +1,69 @@
 {
-  "_izoh": "Saytning umumiy sozlamalari. Bo‘sh qoldirilgan maydonlar saytda faol havola sifatida ko‘rsatilmaydi.",
+  "_izoh": "Saytning umumiy sozlamalari. Manzili bo‘sh qoldirilgan aloqa saytda ko‘rsatilmaydi.",
 
   "site_url": "",
-  "name": "Izzatbek",
+  "name": "Izzatbek Adhamov",
   "role": "HRD",
   "workplace": "Registon ta’lim tarmog‘i",
-  "title": "Izzatbek · HRD",
-  "description": "Izzatbek — HRD. Rekruting, onboarding va xodimlarni rivojlantirish tizimlari, amaliy keyslar va boshqaruv haqidagi fikrlar.",
+  "title": "Izzatbek Adhamov · HRD",
+  "description": "Izzatbek Adhamovning HRD amaliyoti: rekruting, onboarding, xodimlarni rivojlantirish, keyslar va boshqaruv haqidagi maqolalar.",
   "tagline": "Real HRD amaliyoti, biznes tahlili va amaliy boshqaruv modellari.",
 
   "portrait": "/rasmlar/portret.jpg",
-  "portrait_alt": "Izzatbek portreti",
+  "portrait_alt": "Izzatbek Adhamov portreti",
   "og_image": "/rasmlar/og.jpg",
 
   "contacts": [
     {
-      "label": "Telegram",
-      "url": "",
-      "display": "",
-      "placeholder": "https://t.me/username"
-    },
-    {
       "label": "LinkedIn",
+      "note": "Professional aloqa va tajriba almashish.",
       "url": "https://www.linkedin.com/in/izzatbek-adkhamov-0aa216219/",
       "display": "Izzatbek Adkhamov",
       "placeholder": "https://www.linkedin.com/in/username"
     },
     {
+      "label": "Telegram kanalim",
+      "note": "HR, jamoa boshqaruvi va karyera haqida yozuvlarim.",
+      "url": "https://t.me/izzatbekadkhamov",
+      "display": "@izzatbekadkhamov",
+      "placeholder": "https://t.me/kanal"
+    },
+    {
       "label": "Email",
+      "note": "",
       "url": "",
       "display": "",
       "placeholder": "mailto:ism@domen.uz"
     }
   ],
+
+  "_meta_izoh": "Har bir sahifa uchun brauzer sarlavhasi va qidiruv tizimlari uchun tavsif.",
+  "meta": {
+    "/": {
+      "title": "Izzatbek Adhamov — HRD, HR amaliyoti va boshqaruv",
+      "description": "Izzatbek Adhamovning HRD amaliyoti: rekruting, onboarding, xodimlarni rivojlantirish, keyslar va boshqaruv haqidagi maqolalar."
+    },
+    "/men-haqimda/": {
+      "title": "Men haqimda — Izzatbek Adhamov",
+      "description": "Registon ta’lim tarmog‘i HRDsi Izzatbek Adhamovning faoliyati, ish yo‘nalishlari va HR qarorlariga yondashuvi."
+    },
+    "/keyslar/": {
+      "title": "Amaliy HR keyslar — Izzatbek Adhamov",
+      "description": "Rekrutingni tizimlashtirish va HR amaliyoti haqida real vaziyatlar, qarorlar, natijalar hamda olingan saboqlar."
+    },
+    "/maqolalar/": {
+      "title": "HR va rahbarlik haqidagi maqolalar — Izzatbek Adhamov",
+      "description": "Rekruting, rahbarlik, ishdagi munosabatlar va shaxsiy amaliyotdan kelib chiqqan fikrlar."
+    },
+    "/materiallar/": {
+      "title": "HR uchun foydali materiallar — Izzatbek Adhamov",
+      "description": "STAR intervyusi savollari, onboarding tekshiruvi va delegatsiya uchun amaliy qo‘llanmalar."
+    },
+    "/aloqa/": {
+      "title": "Bog‘lanish — Izzatbek Adhamov",
+      "description": "HR, rahbarlik va professional hamkorlik bo‘yicha Izzatbek Adhamov bilan LinkedIn orqali bog‘lanish va Telegram kanalini kuzatish."
+    }
+  },
 
   "nav": [
     { "label": "Men haqimda", "href": "/men-haqimda/" },

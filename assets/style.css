@@ -684,9 +684,18 @@ a:hover > .arrow, .btn:hover .arrow { transform: translateX(4px); }
   line-height: 1;
   font-style: normal;
 }
+.about-lead {
+  max-width: 30ch;
+  margin: 0;
+  color: #fff;
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 1.15rem + 1.3vw, 2.25rem);
+  line-height: 1.25;
+  letter-spacing: -.01em;
+}
 .body-text {
   max-width: 36em;
-  margin: 28px 0 0;
+  margin: 24px 0 0;
   color: var(--on-deep-muted);
   font-size: 1.125rem;
 }
@@ -1164,7 +1173,26 @@ a:hover > .arrow, .btn:hover .arrow { transform: translateX(4px); }
 .material-meta { display: grid; gap: 14px; margin: 4px 0 8px; }
 .material-meta dt { color: var(--muted); font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
 .material-meta dd { margin: 4px 0 0; color: var(--ink-2); font-size: 1rem; }
-.material-action { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); }
+.material-action {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.material-action .btn { min-height: 48px; padding: 0 22px; }
+.material-card {
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+}
+.material-card .material-meta { margin: 0; }
+.aside-links a { color: var(--ink); text-decoration: none; }
+.aside-links a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
 .status { color: var(--muted); font-size: .9375rem; font-style: italic; }
 
 /* ---------------------------------------------------------- aloqa */
@@ -1223,7 +1251,7 @@ a:hover > .arrow, .btn:hover .arrow { transform: translateX(4px); }
 .contact-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
 .contact-row {
   display: grid;
-  grid-template-columns: 120px minmax(0, 1fr) auto;
+  grid-template-columns: minmax(150px, 220px) minmax(0, 1fr) auto;
   align-items: center;
   gap: 16px;
   min-height: 72px;
@@ -1232,6 +1260,15 @@ a:hover > .arrow, .btn:hover .arrow { transform: translateX(4px); }
   text-decoration: none;
 }
 .contact-label { font-weight: 600; }
+.contact-note {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.contact-panel .contact-note { color: var(--on-deep-muted); }
 .contact-value { font-family: var(--serif); font-size: 1.3rem; overflow-wrap: anywhere; transition: color .2s; }
 .contact-arrow { font-size: 1.25rem; transition: transform .25s var(--ease); }
 a.contact-row:hover .contact-arrow { transform: translate(3px, -3px); }
@@ -1288,6 +1325,39 @@ a.contact-row:hover .contact-arrow { transform: translate(3px, -3px); }
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: .82em;
 }
+.prose .table-wrap {
+  margin: 1.6em 0;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+.prose table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-family: var(--sans);
+  font-size: .9375rem;
+  line-height: 1.5;
+}
+.prose th, .prose td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.prose th {
+  background: var(--sand);
+  color: var(--ink);
+  font-size: .8125rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+.prose tbody tr:last-child td { border-bottom: 0; }
+.prose tbody tr:hover td { background: #FCFBF8; }
+.prose td:first-child { font-weight: 500; }
+.prose .num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
 mark.todo {
   padding: .1em .35em;
   border-radius: 3px;
@@ -1345,6 +1415,7 @@ mark.todo {
   color: var(--muted);
   font-size: .9375rem;
 }
+.article-cta { margin: 40px 0 0; }
 .article-end {
   margin-top: clamp(48px, 6vw, 72px);
   padding: 24px 0 clamp(64px, 8vw, 96px);
@@ -1419,7 +1490,7 @@ mark.todo {
 
 .site-footer .contact-list { border-top: 0; }
 .site-footer .contact-row {
-  grid-template-columns: 90px minmax(0, 1fr) auto;
+  grid-template-columns: 140px minmax(0, 1fr) auto;
   min-height: 44px;
   padding: 6px 0;
   border-bottom: 0;
@@ -1529,12 +1600,19 @@ mark.todo {
 
   .contact-panel { padding: 36px 24px; border-radius: 20px; }
   .contact-row { grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px; }
-  .contact-row .contact-label { grid-column: 1; font-size: .8125rem; opacity: .85; }
+  .contact-row .contact-label { grid-column: 1; font-size: .875rem; }
   .contact-row .contact-value { grid-column: 1; }
   .contact-row .contact-arrow { grid-column: 2; grid-row: 1 / span 2; }
   .site-footer .contact-row { grid-template-columns: minmax(0, 1fr) auto; }
+  .material-action .btn { width: 100%; }
 
   .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .page-head::before { right: -30%; }
   .page-head::after { right: -40%; }
+}
+
+/* Juda tor ekranlarda header bir qatorda qolishi uchun */
+@media (max-width: 420px) {
+  .header-inner { flex-wrap: nowrap; }
+  .brand-role { display: none; }
 }

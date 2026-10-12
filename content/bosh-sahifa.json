@@ -1,16 +1,25 @@
 {
   "_izoh": "Bosh sahifa matnlari. *yulduzcha* ichidagi so‘zlar kursiv va yashil rangda chiqadi.",
-
   "hero": {
-    "eyebrow": "Izzatbek · HRD",
+    "eyebrow": "Izzatbek Adhamov · HRD",
     "title": "Odamlar bilan ishlashni *biznes natijasiga* bog‘layman.",
-    "lead": "Rekruting, onboarding va xodimlarni rivojlantirish tizimlarini quraman. Bu yerda HRD sifatidagi tajribam, amaliy keyslarim va boshqaruv haqidagi fikrlarimni ulashaman.",
-    "primary": { "label": "Keyslar bilan tanishish", "href": "/keyslar/" },
-    "secondary": { "label": "Bog‘lanish", "href": "#aloqa" }
+    "lead": "Rekruting, onboarding va xodimlarni rivojlantirish ustida ishlayman. Bu yerda HRD sifatidagi tajribam, jamoamiz bilan qilgan ishlarimiz va boshqaruvdan olgan saboqlarimni ulashaman.",
+    "primary": {
+      "label": "Keyslar bilan tanishish",
+      "href": "/keyslar/"
+    },
+    "secondary": {
+      "label": "Maqolalarni o‘qish",
+      "href": "/maqolalar/"
+    }
   },
-
-  "focus": ["Rekruting", "Onboarding", "L&D", "Kompetensiyalar", "HR strategiya"],
-
+  "focus": [
+    "Rekruting",
+    "Onboarding",
+    "L&D",
+    "Kompetensiyalar",
+    "HR strategiya"
+  ],
   "areas": {
     "label": "Yo‘nalishlar",
     "title": "Qaysi masalalar bilan ishlayman",
@@ -37,13 +46,18 @@
       }
     ]
   },
-
   "about": {
     "label": "Men haqimda",
     "title": "HR qarorlarini biznes savolidan boshlayman",
-    "statement": "Yaxshi HR jarayoni alohida hujjat emas — u jamoaning har kungi ishida ko‘rinadi va biznes natijasiga ta’sir qiladi.",
-    "text": "Registon ta’lim tarmog‘ida HRD sifatida ishlayman. Tanlov, moslashuv va rivojlanishni bir-biridan uzilgan vazifalar emas, bitta tizimning qismlari deb qarayman.",
-    "link": { "label": "Batafsil men haqimda", "href": "/men-haqimda/" },
+    "paragraphs": [
+      "Men Izzatbek Adhamov, Registon ta’lim tarmog‘ida HRD sifatida ishlayman. Rekruting, xodimlarning moslashuvi, rivojlanishi va rahbarlar kompetensiyalari — asosiy ish yo‘nalishlarim.",
+      "Ishimda muammoni aniqlash, jarayonni tushunarli qilish va natijani o‘lchashga e’tibor beraman. Kundalik rekruting operatsiyalarini jamoa olib boradi; men yo‘nalish, resurslar va natija ko‘rsatkichlari bilan ishlayman.",
+      "Bu saytda muvaffaqiyatli qarorlar bilan birga qiyinchiliklar va olingan saboqlarni ham yozaman. Maqsadim — tajribani ishda qo‘llash mumkin bo‘lgan fikr va materiallarga aylantirish."
+    ],
+    "link": {
+      "label": "Batafsil men haqimda",
+      "href": "/men-haqimda/"
+    },
     "pillars": [
       {
         "title": "Real amaliyot",
@@ -59,7 +73,6 @@
       }
     ]
   },
-
   "audience": {
     "label": "Kim uchun",
     "title": "Bu sayt kimlarga foydali",
@@ -82,22 +95,25 @@
       }
     ]
   },
-
   "cases": {
     "label": "Keyslar",
     "title": "Amaliy keyslar",
-    "intro": "Har bir keys bir xil tuzilmada yoziladi: vaziyat, muammo, qilingan ishlar, natija va olingan saboq."
+    "intro": "Jamoamiz bilan ishlagan real vaziyatlar: qanday muammo bor edi, qaysi qarorni tanladik va nimani o‘rgandik. Natijalarni konteksti bilan ko‘rsataman."
   },
-
   "articles": {
     "label": "Maqolalar",
-    "title": "Maqolalar va fikrlar",
-    "intro": "Rekruting, rahbarlik va HRning biznesdagi o‘rni haqida amaliyotdan kelib chiqqan yozuvlar."
+    "title": "Tanlangan yozuvlar",
+    "intro": "Rahbarlik, rekruting va ishdagi munosabatlar haqida amaliy kuzatuvlar. LinkedIn’da ulashgan fikrlarimning sayt uchun tahrirlangan shakli."
   },
-
   "contact": {
     "label": "Bog‘lanish",
     "title": "Suhbatlashamiz",
-    "text": "HR, rahbarlik yoki professional hamkorlik haqida suhbatlashish uchun bog‘lanishingiz mumkin."
+    "text": "HR jarayonlari, rahbarlik va professional hamkorlik haqida fikr almashishga ochiqman. Qaysi masala bo‘yicha bog‘lanayotganingizni qisqa yozib qoldiring.",
+    "topics": [
+      "Rekruting va xodimlarni tanlash.",
+      "Onboarding va rivojlanish.",
+      "Rahbarlar kompetensiyalari va jamoa boshqaruvi.",
+      "Professional hamkorlik va tajriba almashish."
+    ]
   }
 }

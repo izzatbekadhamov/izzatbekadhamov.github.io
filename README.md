@@ -40,13 +40,13 @@ Keyinchalik shaxsiy domen ulansa: repo **Settings → Pages → Custom domain** 
 
 | Nima | Qayerda |
 |---|---|
-| Ism, tavsif, aloqa manzillari, portret, menyu | `content/sayt.json` |
+| Ism, aloqa manzillari, portret, menyu, sahifa sarlavhalari (`meta`) | `content/sayt.json` |
 | Bosh sahifa matnlari | `content/bosh-sahifa.json` |
 | “Men haqimda” sahifasi | `content/men-haqimda.md` |
 | Keyslar | `content/keyslar/*.md` |
 | Maqolalar | `content/maqolalar/*.md` |
 | Maqola kategoriyalari | `content/kategoriyalar.json` |
-| Materiallar | `content/materiallar.json` + fayllar `content/fayllar/` |
+| Materiallar | `content/materiallar/*.md` (yuklab olinadigan fayl bo‘lsa — `content/fayllar/`) |
 | Rasmlar | `content/rasmlar/` |
 
 Har o‘zgarishdan keyin `python3 build.py` ni qayta ishga tushiring.
@@ -79,12 +79,17 @@ O‘qish vaqti matn hajmidan avtomatik hisoblanadi.
 
 `content/keyslar/` da fayl yarating (mavjud qoralamalardan nusxa olish qulay). Sozlamalar: `title`, `topic`, `summary`, `order` (tartib raqami), `draft`. Matn beshta `##` bo‘limdan iborat: Vaziyat, Muammo, Qilingan ishlar, Natija, Olingan saboq.
 
+### Yangi material
+
+`content/materiallar/` da fayl yarating. Sozlamalar: `title`, `type`, `audience` (kim uchun), `task` (qaysi vazifani hal qiladi), `summary`, `order`, `file`, `draft`. Har bir material o‘z o‘qish sahifasini oladi. `file` ga `content/fayllar/` dagi fayl nomi yozilsagina “Yuklab olish” tugmasi chiqadi.
+
 ### Markdown qisqacha
 
 - `## Sarlavha`, `### Kichik sarlavha`
 - `**qalin**`, `*kursiv*`, `[havola](https://...)`
 - `- band` yoki `1. band` — ro‘yxat
 - `> iqtibos`
+- `| ustun | ustun |` — jadval (ikkinchi qator `| --- | ---: |`; `---:` raqamlarni o‘ngga tekislaydi)
 - `---` — ajratuvchi chiziq
 - `[[...]]` — to‘ldirilishi kerak bo‘lgan joy (qoralamada sariq ko‘rinadi; e’lon qilingan sahifada qolsa, `build.py` ogohlantiradi)
 

@@ -2,7 +2,7 @@
 title: Filial rahbarlari kompetensiya modelini ishlab chiqish
 topic: Rahbarlik va kompetensiyalar
 summary: Filial rahbaridan qanday natija va xatti-harakat kutilishini aniq model ko‘rinishida kelishib olish.
-order: 3
+order: 4
 draft: true
 ---
 
