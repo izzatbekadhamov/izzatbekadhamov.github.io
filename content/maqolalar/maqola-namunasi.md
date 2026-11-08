@@ -2,29 +2,29 @@
 title: Maqola namunasi — yangi maqola uchun shablon
 date: 2026-10-10
 category: hr-va-biznes
-summary: Bu namuna faqat qoralama preview’da ko‘rinadi. Yangi maqola yozish uchun shu faylni nusxalab, matnini almashtiring.
+summary: Bu namuna faqat qoralama previewʼda koʻrinadi. Yangi maqola yozish uchun shu faylni nusxalab, matnini almashtiring.
 draft: true
 ---
 
-Bu fayl maqola sahifasi qanday ko‘rinishini tekshirish uchun yaratilgan. U ommaviy saytda chiqmaydi, chunki yuqoridagi sozlamada `draft: true` turibdi.
+Bu fayl maqola sahifasi qanday koʻrinishini tekshirish uchun yaratilgan. U ommaviy saytda chiqmaydi, chunki yuqoridagi sozlamada `draft: true` turibdi.
 
-Yangi maqola yozish uchun `content/maqolalar/` papkasida yangi `.md` fayl yarating. Fayl nomi maqola manzili bo‘ladi: masalan, `onboarding-birinchi-hafta.md` fayli `/maqolalar/onboarding-birinchi-hafta/` manzilida ochiladi.
+Yangi maqola yozish uchun `content/maqolalar/` papkasida yangi `.md` fayl yarating. Fayl nomi maqola manzili boʻladi: masalan, `onboarding-birinchi-hafta.md` fayli `/maqolalar/onboarding-birinchi-hafta/` manzilida ochiladi.
 
 ## Kichik sarlavha
 
-Oddiy paragraflar bo‘sh qator bilan ajratiladi. Paragraflarni qisqa tuting: bitta paragrafda bitta fikr.
+Oddiy paragraflar boʻsh qator bilan ajratiladi. Paragraflarni qisqa tuting: bitta paragrafda bitta fikr.
 
-Matnda **qalin** yoki *kursiv* yozish, shuningdek [havola qo‘shish](/maqolalar/) mumkin.
+Matnda **qalin** yoki *kursiv* yozish, shuningdek [havola qoʻshish](/maqolalar/) mumkin.
 
-## Ro‘yxatlar
+## Roʻyxatlar
 
-Belgili ro‘yxat:
+Belgili roʻyxat:
 
 - Birinchi band
 - Ikkinchi band
 - Uchinchi band
 
-Raqamli ro‘yxat:
+Raqamli roʻyxat:
 
 1. Birinchi qadam
 2. Ikkinchi qadam
@@ -32,10 +32,10 @@ Raqamli ro‘yxat:
 
 ## Iqtibos
 
-> Iqtibos yoki asosiy fikrni ajratib ko‘rsatish uchun qator boshiga `>` belgisini qo‘ying.
+> Iqtibos yoki asosiy fikrni ajratib koʻrsatish uchun qator boshiga `>` belgisini qoʻying.
 
 ---
 
-Maqolani e’lon qilishga tayyor bo‘lganda `draft: true` qatorini `draft: false` ga almashtiring va saytni qayta yig‘ing.
+Maqolani eʼlon qilishga tayyor boʻlganda `draft: true` qatorini `draft: false` ga almashtiring va saytni qayta yigʻing.
 
-[[Ikki qavs ichidagi matn to‘ldirilishi kerak bo‘lgan joyni bildiradi va qoralamada sariq rangda ko‘rinadi.]]
+[[Ikki qavs ichidagi matn toʻldirilishi kerak boʻlgan joyni bildiradi va qoralamada sariq rangda koʻrinadi.]]

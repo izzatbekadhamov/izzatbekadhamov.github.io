@@ -1,18 +1,15 @@
 {
-  "_izoh": "Saytning umumiy sozlamalari. Manzili bo‘sh qoldirilgan aloqa saytda ko‘rsatilmaydi.",
-
+  "_izoh": "Saytning umumiy sozlamalari. Manzili boʻsh qoldirilgan aloqa saytda koʻrsatilmaydi.",
   "site_url": "",
   "name": "Izzatbek Adhamov",
-  "role": "HRD",
-  "workplace": "Registon ta’lim tarmog‘i",
-  "title": "Izzatbek Adhamov · HRD",
-  "description": "Izzatbek Adhamovning HRD amaliyoti: rekruting, onboarding, xodimlarni rivojlantirish, keyslar va boshqaruv haqidagi maqolalar.",
-  "tagline": "Real HRD amaliyoti, biznes tahlili va amaliy boshqaruv modellari.",
-
+  "role": "HRD · L&D",
+  "workplace": "Registon LC",
+  "title": "Izzatbek Adhamov · HRD · L&D",
+  "description": "Izzatbek Adhamov — Registon LC HRD. Rekruting, onboarding, L&D, rahbarlar kompetensiyalari va HRda AI boʻyicha keyslar, maqolalar, materiallar va hamkorlik.",
+  "tagline": "Kompaniyaning eng katta investitsiyasi — uning odamlari.",
   "portrait": "/rasmlar/portret.jpg",
   "portrait_alt": "Izzatbek Adhamov portreti",
   "og_image": "/rasmlar/og.jpg",
-
   "contacts": [
     {
       "label": "LinkedIn",
@@ -30,26 +27,25 @@
     },
     {
       "label": "Email",
-      "note": "",
-      "url": "",
-      "display": "",
+      "note": "Trening, konsalting va hamkorlik takliflari uchun.",
+      "url": "mailto:izzatbekadhamov1@gmail.com",
+      "display": "izzatbekadhamov1@gmail.com",
       "placeholder": "mailto:ism@domen.uz"
     }
   ],
-
   "_meta_izoh": "Har bir sahifa uchun brauzer sarlavhasi va qidiruv tizimlari uchun tavsif.",
   "meta": {
     "/": {
-      "title": "Izzatbek Adhamov — HRD, HR amaliyoti va boshqaruv",
-      "description": "Izzatbek Adhamovning HRD amaliyoti: rekruting, onboarding, xodimlarni rivojlantirish, keyslar va boshqaruv haqidagi maqolalar."
+      "title": "Izzatbek Adhamov — HRD · L&D",
+      "description": "Izzatbek Adhamov — Registon LC HRD. Rekruting, onboarding, L&D, rahbarlar kompetensiyalari va HRda AI boʻyicha keyslar, maqolalar, materiallar va hamkorlik."
     },
     "/men-haqimda/": {
       "title": "Men haqimda — Izzatbek Adhamov",
-      "description": "Registon ta’lim tarmog‘i HRDsi Izzatbek Adhamovning faoliyati, ish yo‘nalishlari va HR qarorlariga yondashuvi."
+      "description": "Registon LC HRDsi Izzatbek Adhamovning faoliyati, ish yoʻnalishlari, tajribasi va HR qarorlariga yondashuvi."
     },
     "/keyslar/": {
       "title": "Amaliy HR keyslar — Izzatbek Adhamov",
-      "description": "Rekrutingni tizimlashtirish va HR amaliyoti haqida real vaziyatlar, qarorlar, natijalar hamda olingan saboqlar."
+      "description": "Rekruting, onboarding, rahbarlar kompetensiyalari va HR amaliyoti boʻyicha real vaziyatlar, qarorlar, natijalar va saboqlar."
     },
     "/maqolalar/": {
       "title": "HR va rahbarlik haqidagi maqolalar — Izzatbek Adhamov",
@@ -57,19 +53,38 @@
     },
     "/materiallar/": {
       "title": "HR uchun foydali materiallar — Izzatbek Adhamov",
-      "description": "STAR intervyusi savollari, onboarding tekshiruvi va delegatsiya uchun amaliy qo‘llanmalar."
+      "description": "STAR intervyusi savollari, onboarding tekshiruvi va delegatsiya uchun amaliy qoʻllanmalar."
     },
     "/aloqa/": {
-      "title": "Bog‘lanish — Izzatbek Adhamov",
-      "description": "HR, rahbarlik va professional hamkorlik bo‘yicha Izzatbek Adhamov bilan LinkedIn orqali bog‘lanish va Telegram kanalini kuzatish."
+      "title": "Bogʻlanish — Izzatbek Adhamov",
+      "description": "Trening, konsalting va professional hamkorlik boʻyicha Izzatbek Adhamov bilan email yoki LinkedIn orqali bogʻlanish."
     }
   },
-
   "nav": [
-    { "label": "Men haqimda", "href": "/men-haqimda/" },
-    { "label": "Keyslar", "href": "/keyslar/" },
-    { "label": "Maqolalar", "href": "/maqolalar/" },
-    { "label": "Materiallar", "href": "/materiallar/" },
-    { "label": "Bog‘lanish", "href": "/aloqa/", "cta": true }
+    {
+      "label": "Men haqimda",
+      "href": "/men-haqimda/"
+    },
+    {
+      "label": "Keyslar",
+      "href": "/keyslar/"
+    },
+    {
+      "label": "Maqolalar",
+      "href": "/maqolalar/"
+    },
+    {
+      "label": "Materiallar",
+      "href": "/materiallar/"
+    },
+    {
+      "label": "Hamkorlik",
+      "href": "/#hamkorlik"
+    },
+    {
+      "label": "Bogʻlanish",
+      "href": "/aloqa/",
+      "cta": true
+    }
   ]
 }

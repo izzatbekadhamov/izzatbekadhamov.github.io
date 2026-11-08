@@ -1,28 +1,32 @@
 ---
 title: HR amaliyoti: bilimdan real ishga
 topic: Xodimlarni rivojlantirish
-summary: HR sohasiga kirayotgan insonlarga real jarayonlarda o‘rganish imkoniyatini berish va jamoaga moslikni baholash tajribasi.
-order: 2
+summary: HR sohasiga kirayotgan insonlarga real jarayonlarda oʻrganish imkoniyatini berish va jamoaga moslikni baholash tajribasi.
+order: 4
 draft: false
 ---
 
 ## Vaziyat
 
-HR sohasiga kirayotgan insonlarga bilim va ko‘nikma berishga harakat qilib kelaman. Registondagi jamoamizga ham amaliyot orqali qo‘shilgan mutaxassislar bor.
+HR sohasiga kirayotgan insonlarga bilim va koʻnikma berishga harakat qilib kelaman. Registondagi jamoamizga ham amaliyot orqali qoʻshilgan mutaxassislar bor.
 
 ## Muammo
 
-Nazariy bilim insonning real ish jarayonida qanday ishlashini to‘liq ko‘rsatmaydi. Shu bilan birga, bir jamoaga mos kelmaslik uning kasbiy salohiyati yo‘qligini anglatmaydi.
+Nazariy bilim insonning real ish jarayonida qanday ishlashini toʻliq koʻrsatmaydi. Shu bilan birga, bir jamoaga mos kelmaslik uning kasbiy salohiyati yoʻqligini anglatmaydi.
 
 ## Qilingan ishlar
 
-Amaliyot ishtirokchilariga rekrutingni ish muhitida bajarib o‘rganish imkoniyatini berdik. Ochiq postimda beshinchi dastur e’lon qilinishidan avval to‘rtta amaliyot tashkil etilganini yozganman.
+Amaliyot ishtirokchilariga rekrutingni ish muhitida bajarib oʻrganish imkoniyatini berdik. Ochiq postimda beshinchi dastur eʼlon qilinishidan avval toʻrtta amaliyot tashkil etilganini yozganman.
+
+2026-yil oktyabrdan boshlangan navbatdagi dastur onboarding va L&D yoʻnalishiga qaratilgan. U 3 oy davom etadi: 1 oy oʻqish va 2 oy amaliyot. Ishtirokchilar — HR yoʻnalishida oʻqiyotgan bitiruvchi kurs talabalari. Oʻquv dasturini oʻzim yozdim va darslarini oʻzim oʻtaman: rejalashtirish va vazifalarni boshqarishdan boshlab onboarding materiallarini tayyorlash va kichik onboarding jarayonini qurishgacha.
+
+Nomzodlarni tanlashda 10 ballik mezon ishlatamiz. Tajriba shart emas, lekin HRga qiziqish, oʻz kompyuteri va rus yoki ingliz tilini kamida B1 darajada bilish talab qilinadi.
 
 ## Natija
 
-Ishtirokchilarning bir qismi bilan keyinchalik bir jamoada ishlashni davom ettirdik. Barcha ishtirokchilar ishga olinmagan. Shunga qaramay, amaliyot ularning o‘zi uchun foydali ko‘nikma olishiga xizmat qilganini kuzatganman.
+Ishtirokchilarning bir qismi bilan keyinchalik bir jamoada ishlashni davom ettirdik. Barcha ishtirokchilar ishga olinmagan. Shunga qaramay, amaliyot ularning oʻzi uchun foydali koʻnikma olishiga xizmat qilganini kuzatganman.
 
-Ishga olinmagan bir nomzodning keyinchalik boshqa joyda yaxshi natijaga erishganini ham ko‘rganman.
+Ishga olinmagan bir nomzodning keyinchalik boshqa joyda yaxshi natijaga erishganini ham koʻrganman.
 
 ## Olingan saboq
 

@@ -1,5 +1,5 @@
 (function () {
-  // Pastga aylantirganda bo‘limlarni ohista ko‘rsatish
+  // Pastga aylantirganda boʻlimlarni ohista koʻrsatish
   var motionOk = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var revealItems = document.querySelectorAll('.rv');
   if (motionOk && 'IntersectionObserver' in window && revealItems.length) {
@@ -51,7 +51,7 @@
     if (wide.addEventListener) wide.addEventListener('change', onWide);
   }
 
-  // Maqolalarni mavzu bo‘yicha filtrlash
+  // Maqolalarni mavzu boʻyicha filtrlash
   var group = document.querySelector('[data-filter]');
   if (!group) return;
   var buttons = Array.prototype.slice.call(group.querySelectorAll('button[data-value]'));
@@ -70,7 +70,7 @@
       if (match) shown++;
     });
     if (empty) empty.hidden = shown !== 0;
-    if (status) status.textContent = shown + ' ta maqola ko‘rsatilmoqda';
+    if (status) status.textContent = shown + ' ta maqola koʻrsatilmoqda';
     if (updateUrl && window.history.replaceState) {
       var url = new URL(window.location.href);
       if (value === 'all') url.searchParams.delete('mavzu');

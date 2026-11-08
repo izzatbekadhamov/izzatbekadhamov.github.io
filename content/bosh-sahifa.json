@@ -1,15 +1,15 @@
 {
-  "_izoh": "Bosh sahifa matnlari. *yulduzcha* ichidagi so‘zlar kursiv va yashil rangda chiqadi.",
+  "_izoh": "Bosh sahifa matnlari. *yulduzcha* ichidagi soʻzlar kursiv va yashil rangda chiqadi.",
   "hero": {
-    "eyebrow": "Izzatbek Adhamov · HRD",
-    "title": "Odamlar bilan ishlashni *biznes natijasiga* bog‘layman.",
-    "lead": "Rekruting, onboarding va xodimlarni rivojlantirish ustida ishlayman. Bu yerda HRD sifatidagi tajribam, jamoamiz bilan qilgan ishlarimiz va boshqaruvdan olgan saboqlarimni ulashaman.",
+    "eyebrow": "Izzatbek Adhamov · HRD · L&D",
+    "title": "Kompaniyaning eng katta investitsiyasi — *uning odamlari*.",
+    "lead": "Registon LCʼda HRD sifatida 1 500 dan ortiq xodim va 60+ filial uchun rekruting, onboarding va xodimlarni rivojlantirish tizimlarini quraman. Bu yerda shu ishdan olingan keyslar, fikrlar va tayyor materiallarni ulashaman.",
     "primary": {
       "label": "Keyslar bilan tanishish",
       "href": "/keyslar/"
     },
     "secondary": {
-      "label": "Maqolalarni o‘qish",
+      "label": "Maqolalarni oʻqish",
       "href": "/maqolalar/"
     }
   },
@@ -18,19 +18,20 @@
     "Onboarding",
     "L&D",
     "Kompetensiyalar",
+    "HRda AI",
     "HR strategiya"
   ],
   "areas": {
-    "label": "Yo‘nalishlar",
+    "label": "Yoʻnalishlar",
     "title": "Qaysi masalalar bilan ishlayman",
     "items": [
       {
         "title": "Rekruting va tanlov tizimlari",
-        "text": "Vakansiya profilidan ishga qabul qilish qarorigacha bo‘lgan jarayonni aniq bosqichlar va baholash mezonlari bilan quraman."
+        "text": "Vakansiya profilidan ishga qabul qilish qarorigacha boʻlgan jarayonni aniq bosqichlar va baholash mezonlari bilan quraman."
       },
       {
         "title": "Onboarding va rivojlanish",
-        "text": "Yangi xodim tezroq moslashishi va o‘z rolini tushunishi uchun birinchi kunlar va oylarni rejalashtiraman."
+        "text": "Yangi xodim tezroq moslashishi va oʻz rolini tushunishi uchun birinchi kunlar va oylarni rejalashtiraman."
       },
       {
         "title": "Rahbarlar kompetensiyalari",
@@ -38,7 +39,11 @@
       },
       {
         "title": "HR va biznes natijalari",
-        "text": "HR jarayonlarini biznes ko‘rsatkichlari bilan bog‘layman: tashabbus qaysi muammoni hal qiladi va natija qanday o‘lchanadi."
+        "text": "HR jarayonlarini biznes koʻrsatkichlari bilan bogʻlayman: tashabbus qaysi muammoni hal qiladi va natija qanday oʻlchanadi."
+      },
+      {
+        "title": "HRda AI va avtomatlashtirish",
+        "text": "Takrorlanadigan HR ishlarini AI va oddiy vositalar bilan avtomatlashtiraman: nomzodlarni saralashdan hisobotlargacha. Avval jarayonni hujjatlashtiraman, keyin vosita tanlayman."
       },
       {
         "title": "HR jamoasi va jarayonlar",
@@ -50,9 +55,9 @@
     "label": "Men haqimda",
     "title": "HR qarorlarini biznes savolidan boshlayman",
     "paragraphs": [
-      "Men Izzatbek Adhamov, Registon ta’lim tarmog‘ida HRD sifatida ishlayman. Rekruting, xodimlarning moslashuvi, rivojlanishi va rahbarlar kompetensiyalari — asosiy ish yo‘nalishlarim.",
-      "Ishimda muammoni aniqlash, jarayonni tushunarli qilish va natijani o‘lchashga e’tibor beraman. Kundalik rekruting operatsiyalarini jamoa olib boradi; men yo‘nalish, resurslar va natija ko‘rsatkichlari bilan ishlayman.",
-      "Bu saytda muvaffaqiyatli qarorlar bilan birga qiyinchiliklar va olingan saboqlarni ham yozaman. Maqsadim — tajribani ishda qo‘llash mumkin bo‘lgan fikr va materiallarga aylantirish."
+      "Men Izzatbek Adhamov, Registon LCʼda HRD sifatida ishlayman. Rekruting, onboarding, L&D va rahbarlar kompetensiyalari — asosiy ish yoʻnalishlarim.",
+      "Kompaniyada 1 500 dan ortiq xodim va 60 dan ortiq filial bor, har oy oʻrtacha 55 nafar yangi xodim qoʻshiladi. Shunday hajmda HR kundalik operatsiya emas, tizim boʻlishi kerak. Men yoʻnalish, standart va natija koʻrsatkichlari bilan ishlayman, kundalik operatsiyalarni jamoamiz olib boradi.",
+      "Bu saytda muvaffaqiyatli qarorlar bilan birga qiyinchiliklar va olingan saboqlarni ham yozaman. Maqsadim — tajribani ishda qoʻllash mumkin boʻlgan fikr va materiallarga aylantirish."
     ],
     "link": {
       "label": "Batafsil men haqimda",
@@ -65,11 +70,11 @@
       },
       {
         "title": "Biznes tahlili",
-        "text": "HR tashabbusini biznes ehtiyoji va o‘lchanadigan ko‘rsatkich orqali baholayman."
+        "text": "HR tashabbusini biznes ehtiyoji va oʻlchanadigan koʻrsatkich orqali baholayman."
       },
       {
         "title": "Boshqaruv modellari",
-        "text": "Tajribani boshqalar ham qo‘llay oladigan aniq model, bosqich va shablonlarga aylantiraman."
+        "text": "Tajribani boshqalar ham qoʻllay oladigan aniq model, bosqich va shablonlarga aylantiraman."
       }
     ]
   },
@@ -78,42 +83,80 @@
     "title": "Bu sayt kimlarga foydali",
     "items": [
       {
-        "title": "HR menejerlar va sohaga kirayotganlar",
-        "text": "Amaliy keyslar, jarayon tuzilmalari va ishda qo‘llash mumkin bo‘lgan materiallar."
+        "title": "Rahbarlar va boʻlajak rahbarlar",
+        "text": "Jamoani boshqarish, yangi xodimni moslashtirish va odamlarni ushlab qolish boʻyicha tajribadan olingan amaliy qoidalar."
       },
       {
-        "title": "O‘rta bo‘g‘in rahbarlari",
-        "text": "Jamoa bilan ishlash, yangi xodimni moslashtirish va rivojlantirish bo‘yicha fikrlar."
+        "title": "HR mutaxassislari",
+        "text": "Jarayon tuzilmalari, shablonlar va HR ishini AI bilan avtomatlashtirish boʻyicha tajriba."
       },
       {
-        "title": "Kichik va o‘rta biznes egalari",
-        "text": "HR qarorlarini biznes nuqtai nazaridan ko‘rib chiqish uchun tahlillar."
+        "title": "Yosh mutaxassislar",
+        "text": "Karyerada oʻsish va HR sohasiga kirish haqida halol maslahatlar."
       },
       {
-        "title": "Professional hamkorlikka qiziquvchilar",
-        "text": "Fikrlash uslubim va tajribam bilan tanishish hamda bog‘lanish imkoniyati."
+        "title": "Kichik va oʻrta biznes egalari",
+        "text": "Oʻsayotgan jamoada HR qarorlarini biznes nuqtai nazaridan koʻrib chiqish uchun tahlillar."
       }
     ]
   },
   "cases": {
     "label": "Keyslar",
     "title": "Amaliy keyslar",
-    "intro": "Jamoamiz bilan ishlagan real vaziyatlar: qanday muammo bor edi, qaysi qarorni tanladik va nimani o‘rgandik. Natijalarni konteksti bilan ko‘rsataman."
+    "intro": "Jamoamiz bilan ishlagan real vaziyatlar: qanday muammo bor edi, qaysi qarorni tanladik va nimani oʻrgandik. Natijalarni konteksti va chegarasi bilan koʻrsataman."
   },
   "articles": {
     "label": "Maqolalar",
     "title": "Tanlangan yozuvlar",
-    "intro": "Rahbarlik, rekruting va ishdagi munosabatlar haqida amaliy kuzatuvlar. LinkedIn’da ulashgan fikrlarimning sayt uchun tahrirlangan shakli."
+    "intro": "Rahbarlik, rekruting va ishdagi munosabatlar haqida amaliy kuzatuvlar. LinkedInʼda ulashgan fikrlarimning sayt uchun tahrirlangan shakli."
   },
   "contact": {
-    "label": "Bog‘lanish",
+    "label": "Bogʻlanish",
     "title": "Suhbatlashamiz",
-    "text": "HR jarayonlari, rahbarlik va professional hamkorlik haqida fikr almashishga ochiqman. Qaysi masala bo‘yicha bog‘lanayotganingizni qisqa yozib qoldiring.",
+    "text": "Trening, konsalting yoki professional hamkorlik boʻyicha yozing. Qaysi masala boʻyicha bogʻlanayotganingizni va kompaniyangiz hajmini qisqa yozib qoldiring.",
     "topics": [
-      "Rekruting va xodimlarni tanlash.",
-      "Onboarding va rivojlanish.",
-      "Rahbarlar kompetensiyalari va jamoa boshqaruvi.",
+      "Onboarding tekshiruvi (1 hafta).",
+      "Trening: adaptatsiya va mentorlik, strukturali intervyu, HRda AI.",
+      "Konsalting: rekruting va onboarding tizimini qurish.",
       "Professional hamkorlik va tajriba almashish."
     ]
+  },
+  "offer": {
+    "label": "Hamkorlik",
+    "title": "Bir haftada onboardingingizni tekshirib beraman",
+    "intro": "Yangi xodimlar birinchi oylarda ketyaptimi yoki ishga sekin kirishyaptimi? Bir hafta ichida moslashuv jarayoningizni koʻrib chiqaman va qayerda toʻxtab qolayotganini aniq koʻrsataman.",
+    "steps": [
+      {
+        "title": "Tanishuv suhbati",
+        "text": "Jarayoningiz, lavozimlar va maqsadingizni 30 daqiqada muhokama qilamiz."
+      },
+      {
+        "title": "Tekshiruv",
+        "text": "Onboarding hujjatlari va yangi xodimlar fikrini D7–D30–D60 savollari asosida koʻrib chiqaman."
+      },
+      {
+        "title": "Xulosa va reja",
+        "text": "Asosiy toʻsiqlar, ularning sababi va keyingi 30 kun uchun aniq qadamlar."
+      }
+    ],
+    "primary": {
+      "label": "Tekshiruvga yozilish",
+      "href": "/aloqa/"
+    },
+    "freebie": {
+      "title": "Bepul: D7–D30–D60 tekshiruvi",
+      "text": "Yangi xodim bilan 7-, 30- va 60-kunda nimani soʻrash kerakligi — bir varaqda.",
+      "href": "/materiallar/onboarding-d7-d30-d60/",
+      "label": "Materialni olish"
+    },
+    "also": {
+      "title": "Boshqa formatlar",
+      "items": [
+        "Trening: adaptatsiya va mentorlik",
+        "Trening: strukturali intervyu va STAR",
+        "Trening: HRda AI",
+        "Konsalting: rekruting va onboarding tizimi"
+      ]
+    }
   }
 }

@@ -1,6 +1,6 @@
 /* Izzatbek Adhamov — sayt uslubi.
    Ranglar, shriftlar va radiuslar shaxsiy brend dizayn tizimidan ("G · Tugun", Mohiyat palitrasi) olingan.
-   Manba: dizayn tizimi -> 09 · Tokenlar. Qiymatni o‘zgartirish kerak bo‘lsa, avval dizayn tizimida o‘zgartiring. */
+   Manba: dizayn tizimi -> 09 · Tokenlar. Qiymatni oʻzgartirish kerak boʻlsa, avval dizayn tizimida oʻzgartiring. */
 
 :root {
   /* Brend (doimiy) */
@@ -544,7 +544,7 @@ a:hover > .arrow, .btn:hover .arrow { transform: translateX(4px); }
   line-height: 1;
 }
 
-/* Yugurib turuvchi yo‘nalishlar qatori */
+/* Yugurib turuvchi yoʻnalishlar qatori */
 .marquee {
   overflow: hidden;
   padding: 22px 0;
@@ -583,7 +583,7 @@ a:hover > .arrow, .btn:hover .arrow { transform: translateX(4px); }
   font-style: normal;
 }
 
-/* ---------------------------------------------------------- bo‘limlar */
+/* ---------------------------------------------------------- boʻlimlar */
 
 .section { padding: clamp(72px, 10vw, 136px) 0; }
 .section + .section { border-top: 1px solid var(--line); }
@@ -642,7 +642,7 @@ a:hover > .arrow, .btn:hover .arrow { transform: translateX(4px); }
 
 .split-main { margin-left: calc(var(--label-col) + var(--col-gap)); }
 
-/* 01 Yo‘nalishlar */
+/* 01 Yoʻnalishlar */
 .areas {
   margin: 0; padding: 0;
   list-style: none;
@@ -689,7 +689,7 @@ a:hover > .arrow, .btn:hover .arrow { transform: translateX(4px); }
 }
 .area-text { margin: 0; color: var(--ink-2); }
 
-/* 02 Men haqimda — to‘q bo‘lim */
+/* 02 Men haqimda — toʻq boʻlim */
 .statement {
   max-width: 24ch;
   margin: 0;
@@ -871,7 +871,7 @@ a:hover > .arrow, .btn:hover .arrow { transform: translateX(4px); }
 .card-link:focus-visible::after { outline: 2px solid var(--accent); outline-offset: 3px; }
 .card:hover .arrow { transform: translateX(4px); }
 
-/* Bo‘sh holatlar */
+/* Boʻsh holatlar */
 .empty {
   padding: clamp(28px, 4vw, 56px);
   background: var(--surface);
@@ -981,7 +981,7 @@ a:hover > .arrow, .btn:hover .arrow { transform: translateX(4px); }
   line-height: 1.15;
 }
 
-/* Ichki sahifalardagi kichik bo‘sh ro‘yxat */
+/* Ichki sahifalardagi kichik boʻsh roʻyxat */
 .topic-list {
   display: flex;
   flex-wrap: wrap;
@@ -1002,7 +1002,7 @@ a:hover > .arrow, .btn:hover .arrow { transform: translateX(4px); }
   font-weight: 500;
 }
 
-/* ---------------------------------------------------------- maqolalar ro‘yxati */
+/* ---------------------------------------------------------- maqolalar roʻyxati */
 
 .post-list {
   margin: 0; padding: 0;
@@ -1266,7 +1266,7 @@ a:hover > .arrow, .btn:hover .arrow { transform: translateX(4px); }
 .contact-panel-title {
   margin: 20px 0 20px;
   font-family: var(--serif);
-  /* Sarlavha ustun kengligiga moslanadi: bitta uzun so‘z ham ustundan chiqmaydi */
+  /* Sarlavha ustun kengligiga moslanadi: bitta uzun soʻz ham ustundan chiqmaydi */
   font-size: clamp(2.4rem, 1.4rem + 3vw, 4rem);
   font-size: clamp(2.4rem, 13.5cqi, 6rem);
   font-weight: 600;
@@ -1700,3 +1700,27 @@ mark.todo {
 .site-nav .nav-cta a { background: var(--accent); color: #FFFFFF; }
 .site-nav .nav-cta a:hover { background: var(--accent-ink); }
 .contact-value { font-size: 1.125rem; }
+
+/* ---------------------------------------------------------- hamkorlik taklifi */
+.section--offer { background: var(--firuza-2); }
+.section--offer + .section { border-top: 0; }
+.offer-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: var(--col-gap); align-items: start; }
+.offer-steps { position: relative; margin: 0 0 36px; padding: 0; list-style: none; }
+.offer-step { position: relative; padding: 0 0 28px 64px; }
+.offer-step::before { content: ""; position: absolute; left: 21px; top: 44px; bottom: 4px; width: 2px; background: var(--kul-7); }
+.offer-step:last-child::before { display: none; }
+.offer-step-num { position: absolute; left: 0; top: 0; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--brend-firuza); color: #fff; font-weight: 600; }
+.offer-step:last-child .offer-step-num { background: var(--brend-barg); color: var(--brend-siyoh); }
+.offer-step-title { margin: 6px 0 6px; font-size: 1.3rem; font-weight: 600; line-height: 1.25; }
+.offer-step p { margin: 0; color: var(--ink-2); }
+.offer-aside { display: grid; gap: 18px; }
+.offer-freebie { padding: 27px; border-radius: var(--arch); background: var(--brend-firuza); color: #fff; }
+.offer-freebie-title { margin: 0 0 8px; font-size: 1.3rem; font-weight: 600; }
+.offer-freebie p { margin: 0 0 12px; color: var(--on-deep-muted); }
+.offer-freebie .text-link { color: var(--brend-barg); text-decoration-color: rgba(166, 224, 90, .4); }
+.offer-also { padding: 27px; border: 1px solid var(--line); border-radius: var(--arch); background: var(--surface); }
+@media (max-width: 880px) { .offer-grid { grid-template-columns: 1fr; } }
+/* Bosh sahifa aloqa panelida: yorliq tepada, manzil pastda (uzun email sigʻishi uchun) */
+.section--contact .contact-row { grid-template-columns: minmax(0, 1fr) auto; row-gap: 4px; }
+.section--contact .contact-label { grid-column: 1 / -1; }
+.section--contact .contact-value { overflow-wrap: normal; }

@@ -33,11 +33,11 @@ MONTHS = [
 ]
 WORDS_PER_MINUTE = 180
 CASE_STEPS = [
-    ("Vaziyat", "Qanday sharoit va kontekst bo‘lgan"),
+    ("Vaziyat", "Qanday sharoit va kontekst boʻlgan"),
     ("Muammo", "Aniq nima ishlamagan"),
-    ("Qilingan ishlar", "Qanday qadamlar qo‘yilgan"),
-    ("Natija", "Nima o‘zgardi va qanday o‘lchandi"),
-    ("Olingan saboq", "Keyingi safar nima boshqacha bo‘ladi"),
+    ("Qilingan ishlar", "Qanday qadamlar qoʻyilgan"),
+    ("Natija", "Nima oʻzgardi va qanday oʻlchandi"),
+    ("Olingan saboq", "Keyingi safar nima boshqacha boʻladi"),
 ]
 
 warnings = []
@@ -94,7 +94,7 @@ def format_date(value):
 
 def reading_time(text):
     words = len(re.findall(r"\w+", text))
-    return f"{max(1, round(words / WORDS_PER_MINUTE))} daqiqa o‘qish"
+    return f"{max(1, round(words / WORDS_PER_MINUTE))} daqiqa oʻqish"
 
 
 # ---------------------------------------------------------------- markdown
@@ -124,7 +124,7 @@ def inline(text):
 
 
 def table(rows):
-    """`| a | b |` ko‘rinishidagi jadval. Ikkinchi qator `---` / `---:` bo‘lsa, birinchisi sarlavha."""
+    """`| a | b |` koʻrinishidagi jadval. Ikkinchi qator `---` / `---:` boʻlsa, birinchisi sarlavha."""
     def cells(row):
         return [c.strip() for c in row.strip().strip("|").split("|")]
 
@@ -152,7 +152,7 @@ def table(rows):
 
 
 def markdown(src):
-    """Kichik Markdown: sarlavhalar, paragraflar, ro‘yxatlar, jadvallar, iqtibos, chiziq."""
+    """Kichik Markdown: sarlavhalar, paragraflar, roʻyxatlar, jadvallar, iqtibos, chiziq."""
     lines = src.split("\n")
     out, para, headings, used_ids = [], [], [], set()
     i = 0
@@ -242,9 +242,9 @@ SITE = load_json("sayt.json")
 HOME = load_json("bosh-sahifa.json")
 CATEGORIES = load_json("kategoriyalar.json")
 CATEGORY_TITLES = {c["slug"]: c["title"] for c in CATEGORIES}
-# SITE_URL muhit o‘zgaruvchisi sozlamadagi site_url ni almashtiradi (GitHub Pages yig‘ishida ishlatiladi).
+# SITE_URL muhit oʻzgaruvchisi sozlamadagi site_url ni almashtiradi (GitHub Pages yigʻishida ishlatiladi).
 SITE_URL = (os.environ.get("SITE_URL") or SITE.get("site_url", "")).rstrip("/")
-# Sayt ichki papkada joylashsa (masalan, user.github.io/meningsaytim.uz), barcha havolalarga shu yo‘l qo‘shiladi.
+# Sayt ichki papkada joylashsa (masalan, user.github.io/meningsaytim.uz), barcha havolalarga shu yoʻl qoʻshiladi.
 BASE_PATH = urlparse(SITE_URL).path.rstrip("/")
 YEAR = datetime.date.today().year
 
@@ -255,7 +255,7 @@ def visible(items):
 
 def check_public(doc, kind):
     if not doc["draft"] and "[[" in doc["body"]:
-        warnings.append(f"{kind} '{doc['slug']}' e’lon qilingan, lekin to‘ldirilmagan [[...]] joylari bor.")
+        warnings.append(f"{kind} '{doc['slug']}' eʼlon qilingan, lekin toʻldirilmagan [[...]] joylari bor.")
 
 
 def load_cases():
@@ -274,13 +274,13 @@ def load_articles():
         doc = parse_doc(path)
         check_public(doc, "Maqola")
         if doc.get("category") not in CATEGORY_TITLES:
-            warnings.append(f"Maqola '{doc['slug']}': noma’lum kategoriya '{doc.get('category')}'.")
+            warnings.append(f"Maqola '{doc['slug']}': nomaʼlum kategoriya '{doc.get('category')}'.")
         doc["date_obj"], doc["date_text"] = format_date(doc.get("date"))
         if doc["date_obj"] is None and not doc["draft"]:
-            warnings.append(f"Maqola '{doc['slug']}': sana YYYY-MM-DD ko‘rinishida yozilmagan.")
+            warnings.append(f"Maqola '{doc['slug']}': sana YYYY-MM-DD koʻrinishida yozilmagan.")
         doc["reading"] = reading_time(doc["body"])
         articles.append(doc)
-    # Yangi sana avval; bir kunda chiqqanlar `order` bo‘yicha.
+    # Yangi sana avval; bir kunda chiqqanlar `order` boʻyicha.
     articles.sort(key=lambda a: (-(a["date_obj"] or datetime.date.min).toordinal(),
                                  int(a.get("order") or 999)))
     return visible(articles)
@@ -305,7 +305,7 @@ def load_materials():
 # ---------------------------------------------------------------- shablonlar
 
 def asset_url(name):
-    """Fayl o‘zgarganda brauzer keshi yangilanishi uchun versiya qo‘shadi."""
+    """Fayl oʻzgarganda brauzer keshi yangilanishi uchun versiya qoʻshadi."""
     digest = hashlib.md5((ASSETS / name).read_bytes()).hexdigest()[:8]
     return f"/assets/{name}?v={digest}"
 
@@ -346,7 +346,7 @@ def layout(*, title, description, path, body, og_type="website", is_draft=False)
     banner = ""
     if DRAFTS:
         banner = ('<div class="draft-banner" role="note">Qoralama rejimi: bu preview '
-                  'e’lon qilinmagan materiallarni ham ko‘rsatadi.</div>')
+                  'eʼlon qilinmagan materiallarni ham koʻrsatadi.</div>')
 
     return f"""<!doctype html>
 <html lang="uz">
@@ -365,7 +365,7 @@ def layout(*, title, description, path, body, og_type="website", is_draft=False)
   <script src="{asset_url('main.js')}" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#asosiy">Asosiy matnga o‘tish</a>
+  <a class="skip-link" href="#asosiy">Asosiy matnga oʻtish</a>
   {banner}
   {header(path)}
   <main id="asosiy" tabindex="-1">
@@ -445,7 +445,7 @@ def footer(path="/"):
         statement = re.sub(r"\*", "", HOME["hero"]["title"])
         top = f"""<div class="wrap footer-top">
       <p class="footer-statement">{esc(statement)}</p>
-      <a class="btn btn-light" href="/aloqa/">Bog‘lanish <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="btn btn-light" href="/aloqa/">Bogʻlanish <span class="arrow" aria-hidden="true">→</span></a>
     </div>"""
     return f"""<footer class="site-footer">
     <div class="footer-chain">{zanjir()}</div>
@@ -468,7 +468,7 @@ def footer(path="/"):
 
 
 def contact_list(compact=False):
-    """Faqat manzili berilgan aloqalarni ko‘rsatadi; bo‘shlari yashiriladi."""
+    """Faqat manzili berilgan aloqalarni koʻrsatadi; boʻshlari yashiriladi."""
     rows = []
     for c in SITE["contacts"]:
         url = (c.get("url") or "").strip()
@@ -539,7 +539,7 @@ def case_cards(cases, heading="h3"):
           <p class="card-topic">{esc(c.get('topic', ''))}{draft_badge(c)}</p>
           <{heading} class="card-title">{esc(c['title'])}</{heading}>
           <p class="card-text">{esc(c.get('summary', ''))}</p>
-          <a class="card-link" href="/keyslar/{c['slug']}/">Batafsil o‘qish<span class="visually-hidden">: {esc(c['title'])}</span> <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="card-link" href="/keyslar/{c['slug']}/">Batafsil oʻqish<span class="visually-hidden">: {esc(c['title'])}</span> <span class="arrow" aria-hidden="true">→</span></a>
         </li>""")
     return f'<ul class="card-grid" role="list">{"".join(cards)}</ul>'
 
@@ -549,8 +549,8 @@ def cases_empty(heading="h3"):
         <div class="empty-copy">
           <p class="empty-kicker"><span class="pulse" aria-hidden="true"></span>Tayyorlanmoqda</p>
           <{heading} class="empty-title">Birinchi keyslar ustida ishlayapman</{heading}>
-          <p>Har bir keys real vaziyatga asoslanadi va bir xil tuzilmada yoziladi — o‘quvchi qarorlar qanday qabul qilinganini bosqichma-bosqich ko‘ra oladi.</p>
-          <p class="empty-note">Shu mavzular bo‘yicha fikr almashmoqchi bo‘lsangiz, <a href="/aloqa/">bog‘laning</a>.</p>
+          <p>Har bir keys real vaziyatga asoslanadi va bir xil tuzilmada yoziladi — oʻquvchi qarorlar qanday qabul qilinganini bosqichma-bosqich koʻra oladi.</p>
+          <p class="empty-note">Shu mavzular boʻyicha fikr almashmoqchi boʻlsangiz, <a href="/aloqa/">bogʻlaning</a>.</p>
         </div>
         {step_flow()}
       </div>"""
@@ -667,6 +667,39 @@ def build_home(cases, articles):
         articles_html, articles_action = articles_empty(), ""
 
     ct = HOME["contact"]
+    of = HOME.get("offer")
+    offer_html = ""
+    if of:
+        steps = "".join(
+            f'<li class="offer-step rv" style="--d:{n}"><span class="offer-step-num">{n + 1}</span>'
+            f'<h3 class="offer-step-title">{esc(st["title"])}</h3><p>{esc(st["text"])}</p></li>'
+            for n, st in enumerate(of["steps"])
+        )
+        also = "".join(f"<li>{esc(x)}</li>" for x in of["also"]["items"])
+        fb = of["freebie"]
+        offer_html = f"""
+    <section class="section section--offer" id="hamkorlik" aria-labelledby="hamkorlik-title">
+      <div class="wrap">
+        {section_head("04", of['label'], of['title'], of['intro'], hid="hamkorlik-title")}
+        <div class="split-main offer-grid">
+          <div class="offer-main">
+            <ol class="offer-steps" role="list">{steps}</ol>
+            <a class="btn btn-primary" href="{esc(of['primary']['href'])}">{esc(of['primary']['label'])} <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+          <aside class="offer-aside">
+            <div class="offer-freebie">
+              <p class="offer-freebie-title">{esc(fb['title'])}</p>
+              <p>{esc(fb['text'])}</p>
+              <a class="text-link" href="{esc(fb['href'])}">{esc(fb['label'])} <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="offer-also">
+              <p class="aside-title">{esc(of['also']['title'])}</p>
+              <ul class="aside-list">{also}</ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>"""
 
     body = f"""
     <section class="hero" aria-labelledby="hero-title">
@@ -684,7 +717,7 @@ def build_home(cases, articles):
       </div>
     </section>
 
-    <div class="marquee" role="region" aria-label="Faoliyat yo‘nalishlari">
+    <div class="marquee" role="region" aria-label="Faoliyat yoʻnalishlari">
       <div class="marquee-track">
         <ul class="marquee-list">{focus_items}</ul>
         <ul class="marquee-list" aria-hidden="true">{focus_items}</ul>
@@ -722,16 +755,18 @@ def build_home(cases, articles):
       </div>
     </section>
 
+    {offer_html}
+
     <section class="section" id="keyslar" aria-labelledby="keyslar-title">
       <div class="wrap">
-        {section_head("04", cs['label'], cs['title'], cs['intro'], cases_action, hid="keyslar-title")}
+        {section_head("05" if of else "04", cs['label'], cs['title'], cs['intro'], cases_action, hid="keyslar-title")}
         <div class="split-main">{cases_html}</div>
       </div>
     </section>
 
     <section class="section" aria-labelledby="maqolalar-title">
       <div class="wrap">
-        {section_head("05", ar['label'], ar['title'], ar['intro'], articles_action, hid="maqolalar-title")}
+        {section_head("06" if of else "05", ar['label'], ar['title'], ar['intro'], articles_action, hid="maqolalar-title")}
         <div class="split-main">{articles_html}</div>
       </div>
     </section>
@@ -740,7 +775,7 @@ def build_home(cases, articles):
       <div class="wrap">
         <div class="contact-panel rv">
           <div class="contact-panel-head">
-            <p class="section-label"><span class="section-num">06</span>{esc(ct['label'])}</p>
+            <p class="section-label"><span class="section-num">{"07" if of else "06"}</span>{esc(ct['label'])}</p>
             <h2 class="contact-panel-title" id="aloqa-title">{esc(ct['title'])}<span class="accent-dot">.</span></h2>
             <p class="contact-panel-text">{esc(ct['text'])}</p>
           </div>
@@ -763,9 +798,9 @@ def build_about():
         attrs = ' target="_blank" rel="noopener"' if external else ""
         new_tab = '<span class="visually-hidden"> (yangi oynada ochiladi)</span>' if external else ""
         button = (f'<a class="btn btn-primary btn-block" href="{esc(doc["button_url"])}"{attrs}>'
-                  f'{esc(doc.get("button_label", "Bog‘lanish"))}{new_tab} <span class="arrow" aria-hidden="true">↗</span></a>')
+                  f'{esc(doc.get("button_label", "Bogʻlanish"))}{new_tab} <span class="arrow" aria-hidden="true">↗</span></a>')
     else:
-        button = '<a class="btn btn-secondary btn-block" href="/aloqa/">Bog‘lanish</a>'
+        button = '<a class="btn btn-secondary btn-block" href="/aloqa/">Bogʻlanish</a>'
     body = f"""
     {page_head(esc(SITE['name'] + ' · ' + SITE['role']), doc['title'], doc['lead'])}
     <div class="wrap about-layout">
@@ -773,7 +808,7 @@ def build_about():
       <aside class="about-aside" aria-label="Qisqacha">
         {portrait(compact=True)}
         <div class="aside-block">
-          <p class="aside-title">Ish yo‘nalishlari</p>
+          <p class="aside-title">Ish yoʻnalishlari</p>
           <ul class="aside-list">{areas}</ul>
         </div>
         {button}
@@ -806,7 +841,7 @@ def build_case(case):
       </aside>"""
     draft_note = ""
     if case["draft"]:
-        draft_note = '<p class="draft-note">Bu keys qoralama. U ommaviy saytda ko‘rinmaydi.</p>'
+        draft_note = '<p class="draft-note">Bu keys qoralama. U ommaviy saytda koʻrinmaydi.</p>'
     back = '<a class="back-link" href="/keyslar/"><span aria-hidden="true">←</span> Barcha keyslar</a>'
     body = f"""
     <article>
@@ -833,10 +868,10 @@ def build_articles_index(articles):
             f'<button type="button" class="chip" data-value="{esc(c["slug"])}" aria-pressed="false">{esc(c["title"])}</button>'
             for c in CATEGORIES if c["slug"] in used
         ]
-        content = f"""<div class="filters" data-filter role="group" aria-label="Mavzu bo‘yicha filtr" hidden>{''.join(chips)}</div>
+        content = f"""<div class="filters" data-filter role="group" aria-label="Mavzu boʻyicha filtr" hidden>{''.join(chips)}</div>
         <p class="visually-hidden" aria-live="polite" data-filter-status></p>
         {post_list(articles, heading="h2")}
-        <p class="filter-empty" data-filter-empty hidden>Bu mavzuda hozircha maqola yo‘q.</p>"""
+        <p class="filter-empty" data-filter-empty hidden>Bu mavzuda hozircha maqola yoʻq.</p>"""
     else:
         content = articles_empty(heading="h2")
     body = f"""
@@ -844,7 +879,7 @@ def build_articles_index(articles):
     <div class="wrap page-body">{content}</div>
 """
     return layout(title="Maqolalar va fikrlar",
-                  description="Rekruting, onboarding, rahbarlik va HRning biznesdagi o‘rni haqida maqolalar.",
+                  description="Rekruting, onboarding, rahbarlik va HRning biznesdagi oʻrni haqida maqolalar.",
                   path="/maqolalar/", body=body)
 
 
@@ -854,7 +889,7 @@ def build_article(article, articles):
     cat_title = CATEGORY_TITLES.get(cat, "")
     draft_note = ""
     if article["draft"]:
-        draft_note = '<p class="draft-note">Bu maqola qoralama. U ommaviy saytda ko‘rinmaydi.</p>'
+        draft_note = '<p class="draft-note">Bu maqola qoralama. U ommaviy saytda koʻrinmaydi.</p>'
     article_cta = ""
     if article.get("cta_url"):
         article_cta = (f'<p class="article-cta"><a class="btn btn-primary" href="{esc(article["cta_url"])}" target="_blank" rel="noopener">'
@@ -866,7 +901,7 @@ def build_article(article, articles):
     if related:
         related_html = f"""<section class="related" aria-labelledby="yana-oqing">
       <div class="wrap-narrow">
-        <h2 id="yana-oqing" class="related-title">Yana o‘qing</h2>
+        <h2 id="yana-oqing" class="related-title">Yana oʻqing</h2>
         {post_list(related)}
       </div>
     </section>"""
@@ -885,7 +920,7 @@ def build_article(article, articles):
         <div class="prose">{draft_note}{content}</div>
         {article_cta}
         <div class="article-end">
-          <p>Fikr yoki savolingiz bo‘lsa, <a href="/aloqa/">bog‘laning</a>.</p>
+          <p>Fikr yoki savolingiz boʻlsa, <a href="/aloqa/">bogʻlaning</a>.</p>
         </div>
       </div>
     </article>
@@ -922,7 +957,7 @@ def build_materials(materials):
           <p class="card-text">{esc(m.get('summary', ''))}</p>
           {material_meta(m)}
           <div class="material-action">
-            <a class="btn btn-primary" href="/materiallar/{m['slug']}/">Materialni o‘qish<span class="visually-hidden">: {esc(m['title'])}</span> <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn-primary" href="/materiallar/{m['slug']}/">Materialni oʻqish<span class="visually-hidden">: {esc(m['title'])}</span> <span class="arrow" aria-hidden="true">→</span></a>
             {material_download(m)}
           </div>
         </li>""")
@@ -934,11 +969,11 @@ def build_materials(materials):
         <ul class="topic-list"><li>Chek-listlar</li><li>Intervyu savollari</li><li>HR shablonlari</li></ul>
       </div>"""
     body = f"""
-    {page_head("Materiallar", "Foydali materiallar", "Suhbat, onboarding va delegatsiya uchun ishda qo‘llash mumkin bo‘lgan qisqa qo‘llanmalar. Har bir material vazifani aniqroq tashkil qilishga yordam beradi.")}
+    {page_head("Materiallar", "Foydali materiallar", "Suhbat, onboarding va delegatsiya uchun ishda qoʻllash mumkin boʻlgan qisqa qoʻllanmalar. Har bir material vazifani aniqroq tashkil qilishga yordam beradi.")}
     <div class="wrap page-body">{content}</div>
 """
     return layout(title="Foydali materiallar",
-                  description="HR mutaxassislar va rahbarlar uchun amaliy qo‘llanmalar.",
+                  description="HR mutaxassislar va rahbarlar uchun amaliy qoʻllanmalar.",
                   path="/materiallar/", body=body)
 
 
@@ -946,7 +981,7 @@ def build_material(m, materials):
     content, _ = markdown(m["body"])
     draft_note = ""
     if m["draft"]:
-        draft_note = '<p class="draft-note">Bu material qoralama. U ommaviy saytda ko‘rinmaydi.</p>'
+        draft_note = '<p class="draft-note">Bu material qoralama. U ommaviy saytda koʻrinmaydi.</p>'
     back = '<a class="back-link" href="/materiallar/"><span aria-hidden="true">←</span> Barcha materiallar</a>'
     download = material_download(m)
     others = [x for x in materials if x["slug"] != m["slug"]]
@@ -983,7 +1018,7 @@ def build_contact():
     ct = HOME["contact"]
     topics = "".join(f"<li>{esc(t)}</li>" for t in ct.get("topics", []))
     body = f"""
-    {page_head("Bog‘lanish", ct['title'], ct['text'])}
+    {page_head("Bogʻlanish", ct['title'], ct['text'])}
     <div class="wrap page-body contact-page">
       <div class="contact-panel">
         <div class="contact-panel-head">
@@ -997,12 +1032,12 @@ def build_contact():
       </div>
     </div>
 """
-    return layout(title="Bog‘lanish", description=ct["text"], path="/aloqa/", body=body)
+    return layout(title="Bogʻlanish", description=ct["text"], path="/aloqa/", body=body)
 
 
 def build_404():
     body = f"""
-    {page_head("404", "Sahifa topilmadi", "Siz qidirgan sahifa ko‘chirilgan yoki hali yaratilmagan bo‘lishi mumkin.")}
+    {page_head("404", "Sahifa topilmadi", "Siz qidirgan sahifa koʻchirilgan yoki hali yaratilmagan boʻlishi mumkin.")}
     <div class="wrap page-body">
       <div class="actions">
         <a class="btn btn-primary" href="/">Bosh sahifaga qaytish</a>
@@ -1014,7 +1049,7 @@ def build_404():
                   body=body, is_draft=True)
 
 
-# ---------------------------------------------------------------- yig‘ish
+# ---------------------------------------------------------------- yigʻish
 
 def with_base_path(text):
     if not BASE_PATH:
