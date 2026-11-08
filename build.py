@@ -424,8 +424,8 @@ def header(path):
     return f"""<header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="/" aria-label="{esc(SITE['name'])} — bosh sahifa">
-        <span class="brand-mark" aria-hidden="true">{tugun(28, stroke=8)}</span>
-        <span class="brand-name">{esc(SITE['name'])}<span class="brand-role"> · {esc(SITE['role'])}</span></span>
+        <span class="brand-mark" aria-hidden="true">{tugun(48, light=False)}</span>
+        <span class="brand-name">{esc(SITE['name'])}<span class="brand-role">{esc(SITE['role'])}</span></span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sayt-menyu">
         <span class="nav-toggle-icon" aria-hidden="true"></span><span>Menyu</span>
@@ -453,7 +453,7 @@ def footer(path="/"):
     {top}
     <div class="wrap footer-grid">
       <div class="footer-brand">
-        <p class="footer-name"><span class="brand-mark" aria-hidden="true">{tugun(28, stroke=8)}</span>{esc(SITE['name'])} · {esc(SITE['role'])}</p>
+        <p class="footer-name"><span class="brand-mark" aria-hidden="true">{tugun(48)}</span>{esc(SITE['name'])} · {esc(SITE['role'])}</p>
         <p class="footer-tagline">{esc(SITE['tagline'])}</p>
       </div>
       <nav aria-label="Pastki menyu">
@@ -613,7 +613,7 @@ def hero_visual():
               <defs><path id="badge-ring" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"/></defs>
               <text><textPath href="#badge-ring" textLength="280" lengthAdjust="spacing">{esc(ring)}</textPath></text>
             </svg>
-            <span class="hero-badge-mark">{tugun(36, stroke=7)}</span>
+            <span class="hero-badge-mark">{tugun(56, light=False)}</span>
           </div>
           <p class="hero-card">
             <span class="hero-card-dot" aria-hidden="true"></span>

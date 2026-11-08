@@ -1744,3 +1744,14 @@ mark.todo {
 .prose .exp-roles li { display: block; padding: 4px 0; }
 .exp-role { display: block; font-size: 1rem; }
 .exp-period { display: block; }
+
+/* Tugun belgisi — dizayn tizimi lockupi: yorugʻ fonda rangli belgi plitkasiz,
+   yonida ism (Onest 600) va unvon ikki qatorda; belgi balandligi = ikki qator. */
+.brand { gap: 12px; }
+.brand-mark, .footer-name .brand-mark { width: auto; height: auto; border: 0; border-radius: 0; background: none; }
+.brand-mark svg, .footer-name .brand-mark svg { display: block; width: 48px; height: auto; }
+.brand-name { display: flex; flex-direction: column; line-height: 1.2; color: var(--brend-firuza); }
+.brand-role { color: var(--muted); font-weight: 400; font-size: .8125rem; }
+.hero-badge-mark { width: auto; height: auto; border-radius: 0; background: none; }
+.hero-badge .hero-badge-mark svg { width: 56px; }
+.footer-name { display: flex; align-items: center; gap: 12px; }
