@@ -20,12 +20,11 @@ Sayt kontenti 2026-yil 12-oktabrda `Izzatbek-Adhamov-sayt-kontenti.md` hujjati a
 - [x] Onboarding va kompetensiya modeli keyslari toʻldirildi; HR amaliyoti keysi yangilandi.
 - [x] Bosh sahifaga “Hamkorlik” boʻlimi (onboarding tekshiruvi) qoʻshildi.
 - [x] 3 ta material uchun PDF (`content/fayllar/`).
+- [x] Ish tajribasi va kompaniya logotiplari (LinkedIn asosida, `content/tajriba.json`).
 - [x] Tutuq belgilari: oʻ, gʻ — ʻ (U+02BB); tutuq — ʼ (U+02BC).
 
 ## Hali berilmagan
 
-- [ ] **Avvalgi ish joylari** — kompaniya nomi, lavozim va davrlar (LinkedIn Experience). “Men haqimda” → “Ish tajribasi”.
-- [ ] **Rekruting keysi raqamlari** — 5 rekruter × ~15 = 75, jadvalda jamoa jami 50; “10 dan 2,5” va strukturali intervyudagi “1/10” farqi. Metodika va oldin/keyin davrlari.
 - [ ] **Maqolalarning asl postlari** — aniq sanasi va bevosita havolalari.
 - [ ] **Kompetensiya modeli keysi** — baholash yakunlangach natija va saboq.
 
