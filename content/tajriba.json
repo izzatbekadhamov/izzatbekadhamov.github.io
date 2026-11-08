@@ -1,0 +1,44 @@
+{
+  "_izoh": "Ish tajribasi (manba: LinkedIn Experience, 2026-11-08). logo — content/rasmlar/kompaniyalar/ dagi fayl; boʻsh boʻlsa bosh harf koʻrsatiladi.",
+  "items": [
+    {
+      "company": "Registon LC",
+      "logo": "/rasmlar/kompaniyalar/registon.jpg",
+      "place": "Toshkent",
+      "roles": [{"title": "HRD (HR boʻlimi rahbari)", "period": "2025-yil yanvar — hozir"}],
+      "points": [
+        "2025-yilda HR funksiyasining ROI koʻrsatkichi 89% ga yetdi, yillik HR rejaning ~80% bajarildi.",
+        "Oyiga ~30 vakansiya yopadigan rekruting tizimini qurdim: 5 rekruter va ~20 hiring-menejer.",
+        "Jarayonlarni Jobster ATS orqali avtomatlashtirdim va asosiy HR metrikalarini oʻlchashni yoʻlga qoʻydim: staffing level, time to hire, offer acceptance, manba sifati, retention, cost per hire.",
+        "10 kishilik HR jamoasini shakllantirdim.",
+        "7 ta kompaniya bilan hamkorlik orqali xodimlar uchun taklifni (EVP) kuchaytirdim."
+      ]
+    },
+    {
+      "company": "ADONE-MARKETING",
+      "logo": "",
+      "place": "Toshkent",
+      "roles": [{"title": "Hammuassis", "period": "2024-yil avgust — 2025-yil mart"}],
+      "points": []
+    },
+    {
+      "company": "Najot Taʼlim",
+      "logo": "/rasmlar/kompaniyalar/najot-talim.jpg",
+      "place": "Toshkent",
+      "roles": [
+        {"title": "HR generalist", "period": "2022-yil oktyabr — 2024-yil iyun"},
+        {"title": "Rekruting boʻlimi rahbari", "period": "2022-yil aprel — oktyabr"},
+        {"title": "IT rekruter", "period": "2021-yil noyabr — 2022-yil aprel"},
+        {"title": "Rekruter", "period": "2021-yil iyul — oktyabr"}
+      ],
+      "points": []
+    },
+    {
+      "company": "Abutech",
+      "logo": "/rasmlar/kompaniyalar/abutech.jpg",
+      "place": "Toshkent",
+      "roles": [{"title": "SMM menejer", "period": "2021-yil mart — iyun"}],
+      "points": []
+    }
+  ]
+}

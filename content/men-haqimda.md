@@ -1,6 +1,6 @@
 ---
 title: Men haqimda
-lead: Men Izzatbek Adhamov. Registon LCʼda HRD sifatida ishlayman. Asosiy vazifam — xodimlar bilan bogʻliq jarayonlarni kompaniyaning ehtiyojlari va natijalari bilan bogʻlash.
+lead: Men Izzatbek Adhamov. 2025-yildan Registon LCʼda HRD sifatida ishlayman. HR sohasidagi yoʻlim 2021-yilda rekruterlikdan boshlangan. Asosiy vazifam — xodimlar bilan bogʻliq jarayonlarni kompaniyaning ehtiyojlari va natijalari bilan bogʻlash.
 focus: Rekruting · Onboarding · L&D · Kompetensiyalar · HRda AI · HR jamoasi
 button_label: LinkedIn profilim
 button_url: https://www.linkedin.com/in/izzatbek-adkhamov-0aa216219/
@@ -43,8 +43,6 @@ Rahbarlar, HR mutaxassislari va sohaga kirayotgan yoshlar bilan tajriba almashis
 Shuning uchun bu yerda nazariy modellar bilan birga real qarorlar, qarshiliklar, xatolar va saboqlar haqida ham yozaman.
 
 ## Ish tajribasi
-
-- **Registon LC** — HRD (HR boʻlimi rahbari). Rekruting, onboarding, L&D, kompetensiya modellari, HR tahlili va HR jarayonlarini avtomatlashtirish.
 
 ## Taʼlim va kasbiy rivojlanish
 

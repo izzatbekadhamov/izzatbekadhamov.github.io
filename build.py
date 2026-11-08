@@ -240,6 +240,7 @@ def markdown(src):
 
 SITE = load_json("sayt.json")
 HOME = load_json("bosh-sahifa.json")
+TAJRIBA = load_json("tajriba.json") if (CONTENT / "tajriba.json").exists() else {"items": []}
 CATEGORIES = load_json("kategoriyalar.json")
 CATEGORY_TITLES = {c["slug"]: c["title"] for c in CATEGORIES}
 # SITE_URL muhit oʻzgaruvchisi sozlamadagi site_url ni almashtiradi (GitHub Pages yigʻishida ishlatiladi).
@@ -787,9 +788,34 @@ def build_home(cases, articles):
     return layout(title=SITE["title"], description=SITE["description"], path="/", body=body)
 
 
+def experience_html():
+    rows = []
+    for it in TAJRIBA.get("items", []):
+        if it.get("logo"):
+            logo = f'<img src="{esc(it["logo"])}" alt="" width="56" height="56" loading="lazy">'
+        else:
+            logo = f'<span>{esc(it["company"][:1])}</span>'
+        roles = "".join(
+            f'<li><span class="exp-role">{esc(r["title"])}</span><span class="exp-period">{esc(r["period"])}</span></li>'
+            for r in it.get("roles", [])
+        )
+        points = "".join(f"<li>{esc(x)}</li>" for x in it.get("points", []))
+        points_html = f'<ul class="exp-points">{points}</ul>' if points else ""
+        rows.append(f"""<li class="exp-item">
+          <div class="exp-logo" aria-hidden="true">{logo}</div>
+          <div class="exp-body">
+            <p class="exp-company">{esc(it["company"])}<span class="exp-place"> · {esc(it.get("place", ""))}</span></p>
+            <ul class="exp-roles">{roles}</ul>
+            {points_html}
+          </div>
+        </li>""")
+    return f'<ol class="experience" role="list">{"".join(rows)}</ol>' if rows else ""
+
+
 def build_about():
     doc = parse_doc(CONTENT / "men-haqimda.md")
     content, _ = markdown(doc["body"])
+    content = re.sub(r'(<h2[^>]*>Ish tajribasi</h2>)', lambda m: m.group(1) + experience_html(), content, count=1)
     focus = [x.strip() for x in doc.get("focus", "").split("·") if x.strip()]
     focus = focus or [a["title"] for a in HOME["areas"]["items"]]
     areas = "".join(f"<li>{esc(x)}</li>" for x in focus)
