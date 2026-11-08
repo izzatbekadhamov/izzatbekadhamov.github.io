@@ -382,19 +382,26 @@ def layout(*, title, description, path, body, og_type="website", is_draft=False)
 _TID = [0]
 
 
-def tugun(size=28, light=True, stroke=6):
-    """Brend belgisi — tugun (dizayn tizimi, 03 · Logotip). light=True: toʻq fon uchun."""
+def tugun(size=48, light=True, stroke=6):
+    """Brend belgisi — tugun. Dizayn tizimi Assets › Logotip fayllari bilan bir xil geometriya.
+    light=True: toʻq fon uchun (oq + brend-barg); light=False: yorugʻ fon uchun (firuza + barg-matn)."""
     _TID[0] += 1
     k = _TID[0]
     a = "#FFFFFF" if light else "#0F4C52"
     b = "#A6E05A" if light else "#3F7D1F"
     gap = stroke + 7
-    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{round(size*58/74)}" viewBox="13 21 74 58" aria-hidden="true" focusable="false">'
-            '<defs><clipPath id="tca{k}"><circle cx="50" cy="70.3" r="10"/></clipPath><clipPath id="tcb{k}"><circle cx="50" cy="29.7" r="10"/></clipPath>'
-            f'<mask id="tma{k}" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/><g clip-path="url(#tca{k})" fill="none" stroke="#000" stroke-width="{gap}"><rect x="38" y="30" width="40" height="40" rx="10" transform="rotate(45 58 50)"/></g></mask>'
-            f'<mask id="tmb{k}" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/><g clip-path="url(#tcb{k})" fill="none" stroke="#000" stroke-width="{gap}"><rect x="22" y="30" width="40" height="40" rx="10" transform="rotate(45 42 50)"/></g></mask></defs>'
-            f'<g mask="url(#tma{k})" fill="none" stroke="{a}" stroke-width="{stroke}"><rect x="22" y="30" width="40" height="40" rx="10" transform="rotate(45 42 50)"/></g>'
-            f'<g mask="url(#tmb{k})" fill="none" stroke="{b}" stroke-width="{stroke}"><rect x="38" y="30" width="40" height="40" rx="10" transform="rotate(45 58 50)"/></g></svg>')
+    h = round(size * 58 / 74)
+    return (
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{h}" viewBox="13 21 74 58" aria-hidden="true" focusable="false">'
+        f'<defs><clipPath id="tca{k}"><circle cx="50" cy="70.3" r="10"/></clipPath>'
+        f'<clipPath id="tcb{k}"><circle cx="50" cy="29.7" r="10"/></clipPath>'
+        f'<mask id="tma{k}" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/>'
+        f'<g clip-path="url(#tca{k})" fill="none" stroke="#000" stroke-width="{gap}"><rect x="38" y="30" width="40" height="40" rx="10" transform="rotate(45 58 50)"/></g></mask>'
+        f'<mask id="tmb{k}" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/>'
+        f'<g clip-path="url(#tcb{k})" fill="none" stroke="#000" stroke-width="{gap}"><rect x="22" y="30" width="40" height="40" rx="10" transform="rotate(45 42 50)"/></g></mask></defs>'
+        f'<g mask="url(#tma{k})" fill="none" stroke="{a}" stroke-width="{stroke}"><rect x="22" y="30" width="40" height="40" rx="10" transform="rotate(45 42 50)"/></g>'
+        f'<g mask="url(#tmb{k})" fill="none" stroke="{b}" stroke-width="{stroke}"><rect x="38" y="30" width="40" height="40" rx="10" transform="rotate(45 58 50)"/></g></svg>'
+    )
 
 
 def zanjir(n=110):
