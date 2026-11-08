@@ -16,7 +16,7 @@ Sayt kontenti 2026-yil 12-oktabrda `Izzatbek-Adhamov-sayt-kontenti.md` hujjati a
 
 - [x] Dizayn shaxsiy brend dizayn tizimiga moslandi (Onest/Lora, firuza–barg, tugun belgisi, zanjir naqshi).
 - [x] Unvon “HRD · L&D”, shior “Kompaniyaning eng katta investitsiyasi — uning odamlari”.
-- [x] Email qoʻshildi.
+- [ ] Email — Izzatbek yangi (brend uchun alohida) pochta ochganda `content/sayt.json` → contacts → Email ga yoziladi. Shaxsiy Gmail saytda turmasin.
 - [x] Onboarding va kompetensiya modeli keyslari toʻldirildi; HR amaliyoti keysi yangilandi.
 - [x] Bosh sahifaga “Hamkorlik” boʻlimi (onboarding tekshiruvi) qoʻshildi.
 - [x] 3 ta material uchun PDF (`content/fayllar/`).

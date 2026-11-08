@@ -28,8 +28,8 @@
     {
       "label": "Email",
       "note": "Trening, konsalting va hamkorlik takliflari uchun.",
-      "url": "mailto:izzatbekadhamov1@gmail.com",
-      "display": "izzatbekadhamov1@gmail.com",
+      "url": "",
+      "display": "",
       "placeholder": "mailto:ism@domen.uz"
     }
   ],
@@ -57,7 +57,7 @@
     },
     "/aloqa/": {
       "title": "Bogʻlanish — Izzatbek Adhamov",
-      "description": "Trening, konsalting va professional hamkorlik boʻyicha Izzatbek Adhamov bilan email yoki LinkedIn orqali bogʻlanish."
+      "description": "Trening, konsalting va professional hamkorlik boʻyicha Izzatbek Adhamov bilan LinkedIn yoki Telegram orqali bogʻlanish."
     }
   },
   "nav": [
