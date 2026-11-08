@@ -359,7 +359,7 @@ def layout(*, title, description, path, body, og_type="website", is_draft=False)
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Lora:ital,wght@1,400&display=swap">
   <link rel="stylesheet" href="{asset_url('style.css')}">
   <script>document.documentElement.classList.add('js')</script>
   <script src="{asset_url('main.js')}" defer></script>
@@ -377,6 +377,37 @@ def layout(*, title, description, path, body, og_type="website", is_draft=False)
 """
 
 
+
+_TID = [0]
+
+
+def tugun(size=28, light=True, stroke=6):
+    """Brend belgisi — tugun (dizayn tizimi, 03 · Logotip). light=True: toʻq fon uchun."""
+    _TID[0] += 1
+    k = _TID[0]
+    a = "#FFFFFF" if light else "#0F4C52"
+    b = "#A6E05A" if light else "#3F7D1F"
+    gap = stroke + 7
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{round(size*58/74)}" viewBox="13 21 74 58" aria-hidden="true" focusable="false">'
+            '<defs><clipPath id="tca{k}"><circle cx="50" cy="70.3" r="10"/></clipPath><clipPath id="tcb{k}"><circle cx="50" cy="29.7" r="10"/></clipPath>'
+            f'<mask id="tma{k}" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/><g clip-path="url(#tca{k})" fill="none" stroke="#000" stroke-width="{gap}"><rect x="38" y="30" width="40" height="40" rx="10" transform="rotate(45 58 50)"/></g></mask>'
+            f'<mask id="tmb{k}" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/><g clip-path="url(#tcb{k})" fill="none" stroke="#000" stroke-width="{gap}"><rect x="22" y="30" width="40" height="40" rx="10" transform="rotate(45 42 50)"/></g></mask></defs>'
+            f'<g mask="url(#tma{k})" fill="none" stroke="{a}" stroke-width="{stroke}"><rect x="22" y="30" width="40" height="40" rx="10" transform="rotate(45 42 50)"/></g>'
+            f'<g mask="url(#tmb{k})" fill="none" stroke="{b}" stroke-width="{stroke}"><rect x="38" y="30" width="40" height="40" rx="10" transform="rotate(45 58 50)"/></g></svg>')
+
+
+def zanjir(n=110):
+    """Tugun zanjiri naqshi (toʻq fon uchun): oq + brend-barg."""
+    parts = []
+    for i in range(n):
+        x = 15 + 34 * i
+        col = "#FFFFFF" if i % 2 == 0 else "#A6E05A"
+        parts.append(f'<rect x="{x}" y="15" width="40" height="40" rx="10" fill="none" stroke="#0A3438" stroke-width="13" transform="rotate(45 {x+20} 35)"/>'
+                     f'<rect x="{x}" y="15" width="40" height="40" rx="10" fill="none" stroke="{col}" stroke-width="6" transform="rotate(45 {x+20} 35)"/>')
+    vw = 34 * n + 36
+    return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {vw} 70" aria-hidden="true" focusable="false">{"".join(parts)}</svg>'
+
+
 def nav_current(href, path):
     if href == "/":
         return path == "/"
@@ -392,7 +423,7 @@ def header(path):
     return f"""<header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="/" aria-label="{esc(SITE['name'])} — bosh sahifa">
-        <span class="brand-mark" aria-hidden="true">{esc(SITE['name'][:1])}</span>
+        <span class="brand-mark" aria-hidden="true">{tugun(28, stroke=8)}</span>
         <span class="brand-name">{esc(SITE['name'])}<span class="brand-role"> · {esc(SITE['role'])}</span></span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="sayt-menyu">
@@ -417,10 +448,11 @@ def footer(path="/"):
       <a class="btn btn-light" href="/aloqa/">Bog‘lanish <span class="arrow" aria-hidden="true">→</span></a>
     </div>"""
     return f"""<footer class="site-footer">
+    <div class="footer-chain">{zanjir()}</div>
     {top}
     <div class="wrap footer-grid">
       <div class="footer-brand">
-        <p class="footer-name"><span class="brand-mark" aria-hidden="true">{esc(SITE['name'][:1])}</span>{esc(SITE['name'])} · {esc(SITE['role'])}</p>
+        <p class="footer-name"><span class="brand-mark" aria-hidden="true">{tugun(28, stroke=8)}</span>{esc(SITE['name'])} · {esc(SITE['role'])}</p>
         <p class="footer-tagline">{esc(SITE['tagline'])}</p>
       </div>
       <nav aria-label="Pastki menyu">
@@ -580,7 +612,7 @@ def hero_visual():
               <defs><path id="badge-ring" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"/></defs>
               <text><textPath href="#badge-ring" textLength="280" lengthAdjust="spacing">{esc(ring)}</textPath></text>
             </svg>
-            <span class="hero-badge-mark">{esc(SITE['name'][:1])}</span>
+            <span class="hero-badge-mark">{tugun(36, stroke=7)}</span>
           </div>
           <p class="hero-card">
             <span class="hero-card-dot" aria-hidden="true"></span>
