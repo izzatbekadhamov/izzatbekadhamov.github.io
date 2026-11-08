@@ -404,16 +404,18 @@ def tugun(size=48, light=True, stroke=6):
     )
 
 
-def zanjir(n=110):
-    """Tugun zanjiri naqshi (toʻq fon uchun): oq + brend-barg."""
+def zanjir():
+    """Tugun zanjiri (toʻq fon uchun): oq + brend-barg. SVG pattern — har qanday kenglikda chetigacha takrorlanadi.
+    Davr 68 birlik (2 halqa); oynaga tushadigan qoʻshni halqalar ham chiziladi, shuning uchun ulanish joyi koʻrinmaydi."""
     parts = []
-    for i in range(n):
+    for i in (-1, 0, 1, 2):
         x = 15 + 34 * i
         col = "#FFFFFF" if i % 2 == 0 else "#A6E05A"
         parts.append(f'<rect x="{x}" y="15" width="40" height="40" rx="10" fill="none" stroke="#0A3438" stroke-width="13" transform="rotate(45 {x+20} 35)"/>'
                      f'<rect x="{x}" y="15" width="40" height="40" rx="10" fill="none" stroke="{col}" stroke-width="6" transform="rotate(45 {x+20} 35)"/>')
-    vw = 34 * n + 36
-    return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {vw} 70" aria-hidden="true" focusable="false">{"".join(parts)}</svg>'
+    return ('<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="28" aria-hidden="true" focusable="false">'
+            '<defs><pattern id="zanjir-naqsh" patternUnits="userSpaceOnUse" width="68" height="70" patternTransform="scale(0.4)">'
+            f'{"".join(parts)}</pattern></defs><rect width="100%" height="28" fill="url(#zanjir-naqsh)"/></svg>')
 
 
 def nav_current(href, path):
