@@ -31,8 +31,6 @@ Nomzod boʻyicha qaror faqat «mos» yoki «mos emas» degan javobdan iborat bo�
 | Rekruterlar soni | 3 nafar | 5 nafar |
 | Vakansiyani yopish muddati | Oʻlchanmagan | 17 kun |
 
-Rahbarga yuborilgan har 10 nomzoddan oʻrtacha 2,5 nafari ishga qabul qilingan.
-
 Ushbu raqamlar oʻzgarish davridagi kuzatuvlardir. Ishga qabul hajmi oshgan paytda rekruterlar soni ham koʻpaygan. Shu sababli oʻsishni faqat ATSga bogʻlamayman. Vakansiyani yopish muddati ilgari oʻlchanmagani uchun uning necha kunga qisqarganini ham aytmayman.
 
 ## Olingan saboq
