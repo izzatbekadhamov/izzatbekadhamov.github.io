@@ -12,8 +12,6 @@ Registon LC — 1 500 dan ortiq xodim va 60 dan ortiq filialga ega taʼlim kompa
 
 HRdagi ishlarim rekruting bilan cheklanmaydi. Yangi xodim qanday moslashadi, rahbardan nimalar kutiladi, rivojlanish dasturi qaysi muammoni hal qiladi va HR jamoasi qanday ishlaydi — shu savollar ustida ishlayman.
 
-Rekrutingda mening eʼtiborim jarayon va koʻrsatkichlarga qaratilgan. Kundalik nomzod izlash va suhbatlarni jamoamiz tashkil qiladi. Men ustuvorliklar, resurslar, rahbarlar bilan hamkorlik va natijalarni tahlil qilish bilan shugʻullanaman.
-
 ## Qarorlarga yondashuvim
 
 HR tashabbusini boshlashdan oldin uchta savolga javob izlayman:
