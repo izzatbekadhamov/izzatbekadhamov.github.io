@@ -45,8 +45,6 @@ Filial rahbarlari uchun 10 savolli nazorat varaqasi va 30 kunlik nazorat rejasi 
 | 8-kun soʻrovnomasi (D8) | 181 | 4,79 |
 | 30-kun soʻrovnomasi (D30) | 140 | 4,68 |
 
-Kuchli tomonlar: jamoaning iliq munosabati, rahbar yordami va rolning aniqligi. Zaif tomonlar: birinchi oy oxiridagi stress, ish vositalari, real vazifalarning aniqligi va filiallar oʻrtasidagi mentorlik farqi. 8-kunda javob berganlarning qariyb yarmi Welcome Pack olmaganini aytgan.
-
 Bu raqamlar holat surati, tizimning taʼsirini isbotlovchi dalil emas. 8 va 30-kun javoblarini bir xodim darajasida bogʻlaydigan yagona ID hali yoʻq. Keyingi qadam — xodim tajribasini uning ish natijasi bilan bogʻlash.
 
 ## Olingan saboq
