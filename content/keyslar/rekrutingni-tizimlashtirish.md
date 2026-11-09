@@ -27,7 +27,7 @@ Nomzod boʻyicha qaror faqat «mos» yoki «mos emas» degan javobdan iborat bo�
 | Koʻrsatkich | Oldingi holat | Keyingi holat |
 | --- | ---: | ---: |
 | Bir rekruterning oʻrtacha oylik ishga qabul koʻrsatkichi | Taxminan 12 nafar | Taxminan 15 nafar |
-| Jamoaning oylik ishga qabul hajmi | 30 nafar | 50 nafar |
+| Jamoaning oylik ishga qabul hajmi | 30 ta yangi xodim | 50 ta yangi xodim |
 | Rekruterlar soni | 3 nafar | 5 nafar |
 | Vakansiyani yopish muddati | Oʻlchanmagan | 17 kun |
 
